@@ -1,0 +1,3 @@
+# Aprendizado da semana
+
+Essa semana foi bem intensa, vimos um pouco a *hitória do computador*, vimos alguns comandos de *git*, como utilizar o *terminal* e até mesmo algumas ferramentas que o *GitHub* disponibiliza, os exercícios estão ajudando muito a fixar os conceitos e os comandos que aprendemos, além de serem muito divertidos de fazer. Está sendo uma ótima experiência e estou conseguindo aprender muito bem com a didática dos professores. 
