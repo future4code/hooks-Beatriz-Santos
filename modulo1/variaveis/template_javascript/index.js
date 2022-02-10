@@ -10,10 +10,10 @@
 */
 // ### ESCRITA DE CÓDIGO ###
 //1
-let nome;
-let idade;
+// let nome;
+// let idade;
 
-console.log(typeof nome, typeof idade);
+// console.log(typeof nome, typeof idade);
 // Foram consideradas indefinidas por estarem vazias.
 
 nome  = prompt("Qual seu nome? ");
@@ -42,5 +42,11 @@ b = c;
 
 console.log("O novo valor de a é", a);
 console.log("O novo valor de b é", b);
+
+// ### DESAFIO ###
+
+let num1 = Number(prompt("Digite um numero:"));
+let num1 = Number(prompt("Digite outro numero: "));
+console.log("A soma dos números deu: ",a + b);
 
 
