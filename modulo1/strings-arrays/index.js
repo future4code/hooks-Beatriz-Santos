@@ -55,6 +55,23 @@ indice = indice - 1;
 console.log("O item foi apagado com sucesso", listaDeTarefas.splice(indice, 1));
 console.log("Array final: ", listaDeTarefas);
 
+// --- DESAFIOS ---
+//1 - Receba uma frase e retorne um array onde cada elemento é uma das palavras da frase, ignorando os espaços
+
+const frase = prompt("Digite uma frase: ");
+const arrayfrase = frase.split(" ");
+
+console.log("A frase separada em array é ", arrayfrase);
+
+// 2 - Dado o array ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"], faça um programa que acha o índice da palavra
+// Abacaxi e imprime tanto o índice quanto o tamanho do array
+
+const frutas = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"];
+const posicao = frutas.indexOf("Abacaxi");
+
+console.log("O abacaxi está no índice", posicao, "e o array possui", frutas.length, "posições");
+
+
 
 
 
