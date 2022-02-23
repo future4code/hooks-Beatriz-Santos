@@ -68,3 +68,45 @@ const fruta = [
 ]
 
 console.log(adicionarCarrinho(fruta));
+
+// ### DESAFIOS ###
+// --- 1 ---
+const dados = () => {
+    const nomeUsuario = prompt("Digite seu nome");
+    const idadeUsuario = prompt("Digite sua idade");
+    const profissaoUsuario = prompt("Digite sua profissao");
+
+    const dadosUsuarios = {
+        nome: nomeUsuario,
+        idade: idadeUsuario,
+        profissao: profissaoUsuario
+    }
+    
+    return dadosUsuarios;
+}
+console.log(dados());
+
+// --- 2 ---
+const compararFilme = (filmes) => {
+    const lancadoAntes = filmes[0].anolancamento <  filmes[1].anolancamento;
+    const lancadoJunto = filmes[0].anolancamento == filmes[1].anolancamento;
+
+    console.log("O primeiro filme foi lançado antes do segundo?", lancadoAntes);
+    console.log("O primeiro filme foi lançado no mesmo ano do segundo?", lancadoJunto);
+}
+
+const filmes = [
+    {nome: 'O amigo oculto', anolancamento: 2005},
+    {nome: 'Uma chamada perdida', anolancamento: 2008}
+]
+compararFilme(filmes);
+
+// --- 3 ---
+const disponibilidadeFruta = (fruta) =>{
+    const indisponivel = {
+        ...fruta,
+        disponibilidade: false
+    }
+    return indisponivel;
+}
+console.log(disponibilidadeFruta(fruta[2]));
