@@ -19,72 +19,71 @@ c) Sim daria erro, pois a variavel mensagem foi declarada dentro do IF e só pod
 */
 // ### EXERCICIO DE ESCRITA ###
 // --- 1 ---
+const idade = Number(prompt("Digite sua idade"));
 
-// const idade = Number(prompt("Digite sua idade"));
+if(idade >= 18){
+   console.log("Você pode dirigir");
+}
+else{
+    console.log("Você não pode dirigir");
+}
 
-// if(idade >= 18){
-//    console.log("Você pode dirigir");
-// }
-// else{
-//     console.log("Você não pode dirigir");
-// }
-
-// // --- 2 ---
-// const horario = prompt("Digite o horário que você estuda, sendo M (Matutino) V (Vespertino) N (Noturno)");
+// --- 2 ---
+const horario = prompt("Digite o horário que você estuda, sendo M (Matutino) V (Vespertino) N (Noturno)");
  
-// if(horario.toUpperCase() == 'M'){
-//     console.log("Bom dia!");
-// }
-// else if(horario.toUpperCase() == 'V'){
-//     console.log("Boa tarde!");
-// }
-// else if(horario.toUpperCase() == 'N'){
-//     console.log("Boa noite!");
-// }
-// else{
-//     console.log("Valor digitado inválido");
-// }
+if(horario.toUpperCase() == 'M'){
+    console.log("Bom dia!");
+}
+else if(horario.toUpperCase() == 'V'){
+    console.log("Boa tarde!");
+}
+else if(horario.toUpperCase() == 'N'){
+    console.log("Boa noite!");
+}
+else{
+    console.log("Valor digitado inválido");
+}
 
-// // --- 3 ---
-// switch (horario.toUpperCase()) {
-//     case 'M':
-//         console.log("Bom dia!");
-//         break;
-//     case 'V':
-//         console.log("Boa tarde!");
-//         break;
-//     case 'N':
-//         console.log("Boa noite!");
-//         break;
-//     default:
-//         console.log("Valor digitado inválido");
-//         break;
-// }
+// --- 3 ---
+switch (horario.toUpperCase()) {
+    case 'M':
+        console.log("Bom dia!");
+        break;
+    case 'V':
+        console.log("Boa tarde!");
+        break;
+    case 'N':
+        console.log("Boa noite!");
+        break;
+    default:
+        console.log("Valor digitado inválido");
+        break;
+}
 
-// // --- 4 ---
-// const genero = prompt("Digite o genero do filme");
-// const valor  = Number(prompt("Digite o valor do ingresso"));
+// --- 4 ---
+const genero = prompt("Digite o genero do filme");
+const valor  = Number(prompt("Digite o valor do ingresso"));
 
-// if(genero.toLowerCase() == 'fantasia' && valor < 15){
-//     console.log("Bom filme!");
-// }
-// else{
-//     console.log("Escolha outro filme :(");
-// }
+if(genero.toLowerCase() == 'fantasia' && valor < 15){
+    console.log("Bom filme!");
+}
+else{
+    console.log("Escolha outro filme :(");
+}
 
 // ### DESAFIOS ###
 // --- 1 ---
-// const generoFilme    =   prompt("Digite o genero do filme");
-// const valorIngresso  =   Number(prompt("Digite o valor do ingresso"));
+const generoFilme    =   prompt("Digite o genero do filme");
+const valorIngresso  =   Number(prompt("Digite o valor do ingresso"));
 
-// if(generoFilme.toLowerCase() == 'fantasia' && valorIngresso < 15){
-//     const snack = prompt("Qual snack você irá comprar?");
-//     console.log("Bom filme!");
-//     console.log("Aproveite seu", snack);
-// }
-// else{
-//     console.log("Escolha outro filme :(");
-// }
+if(generoFilme.toLowerCase() == 'fantasia' && valorIngresso < 15){
+    const snack = prompt("Qual snack você irá comprar?");
+    console.log("Bom filme!");
+    console.log("Aproveite seu", snack);
+}
+else{
+    console.log("Escolha outro filme :(");
+}
 
 // --- 2 ---- 
 function valores(etapa){
@@ -155,7 +154,7 @@ function imprimir(jogo){
         console.log("---Dados da compra---");
         console.log("Nome do cliente:", nomeCompleto);
         console.log("Tipo do jogo: Nacional");
-        console.log("Etapa do jogo:", jogo.toUpperCase());
+        console.log("Etapa do jogo:", etapaJogo.toUpperCase());
         console.log("Categoria", categoria);
         console.log("Quantidade de Ingressos:", quantidade);
         console.log("---Valores---");
@@ -167,7 +166,7 @@ function imprimir(jogo){
         console.log("---Dados da compra---");
         console.log("Nome do cliente:", nomeCompleto);
         console.log("Tipo do jogo: Internacional");
-        console.log("Etapa do jogo:", jogo.toUpperCase());
+        console.log("Etapa do jogo:", etapaJogo.toUpperCase());
         console.log("Categoria", categoria);
         console.log("Quantidade de Ingressos:", quantidade);
         console.log("---Valores---");
@@ -190,4 +189,3 @@ if(tipoJogo.toUpperCase() == 'DO' || tipoJogo.toUpperCase() == 'IN'){
 else{
     console.log("Tipo de jogo NÃO ENCONTRADO");
 }
-
