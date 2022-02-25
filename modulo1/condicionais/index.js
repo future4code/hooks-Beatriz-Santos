@@ -17,3 +17,57 @@ b) Caso o numero digitado seja 10 ele irá retornar a mensagem 'Este número pas
 c) Sim daria erro, pois a variavel mensagem foi declarada dentro do IF e só pode ser utilizada dentro daquele bloco ou nos blocos 'filhos' do mesmo,
    então quando chamada fora do IF irá retornar um erro, já que não é uma váriavel global e sim local.
 */
+// ### EXERCICIO DE ESCRITA ###
+// --- 1 ---
+
+const idade = Number(prompt("Digite sua idade"));
+
+if(idade >= 18){
+   console.log("Você pode dirigir");
+}
+else{
+    console.log("Você não pode dirigir");
+}
+
+// --- 2 ---
+const horario = prompt("Digite o horário que você estuda, sendo M (Matutino) V (Vespertino) N (Noturno)");
+ 
+if(horario.toUpperCase() == 'M'){
+    console.log("Bom dia!");
+}
+else if(horario.toUpperCase() == 'V'){
+    console.log("Boa tarde!");
+}
+else if(horario.toUpperCase() == 'N'){
+    console.log("Boa noite!");
+}
+else{
+    console.log("Valor digitado inválido");
+}
+
+// --- 3 ---
+switch (horario.toUpperCase()) {
+    case 'M':
+        console.log("Bom dia!");
+        break;
+    case 'V':
+        console.log("Boa tarde!");
+        break;
+    case 'N':
+        console.log("Boa noite!");
+        break;
+    default:
+        console.log("Valor digitado inválido");
+        break;
+}
+
+// --- 4 ---
+const genero = prompt("Digite o genero do filme");
+const valor  = Number(prompt("Digite o valor do ingresso"));
+
+if(genero.toLowerCase() == 'fantasia' && valor < 15){
+    console.log("Bom filme!");
+}
+else{
+    console.log("Escolha outro filme :(");
+}
