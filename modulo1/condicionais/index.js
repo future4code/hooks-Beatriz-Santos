@@ -6,12 +6,12 @@ b) Caso imprima 'Passou no teste' o número é PAR, já que o resto da divisão 
 c) Caso imprima 'Não passou no teste' o número é ÍMPAR, já que o resto da divisão é diferente de ZERO
 
 --- 2 ---
-a) O código irá pedir o nome de uma fruta para o usuário e devolver o nome da fruta e o valor dela no console
+a) O código irá pedir o nome de uma fruta para o usuário e devolver o nome da fruta e o valorIngresso dela no console
 b) Se o usuário digitar MAÇA o resultado será, "O preço da fruta Maça é R$ 2.25"
-c) Ele irá retorna o valor R$ 5, já que irá atribuir o valor do default ao preço
+c) Ele irá retorna o valorIngresso R$ 5, já que irá atribuir o valorIngresso do default ao preço
 
 --- 3 ---
-a) A primeira linha está atribuindo o valor digitado pelo usuário a uma variavel chamada 'numero' e a declarando como um NUMBER (tipo númerico)
+a) A primeira linha está atribuindo o valorIngresso digitado pelo usuário a uma variavel chamada 'numero' e a declarando como um NUMBER (tipo númerico)
 b) Caso o numero digitado seja 10 ele irá retornar a mensagem 'Este número passou no teste' e criar uma variavel chamada mensagem. 
    Caso o número digitado seja -10 ele irá retornar um erro.
 c) Sim daria erro, pois a variavel mensagem foi declarada dentro do IF e só pode ser utilizada dentro daquele bloco ou nos blocos 'filhos' do mesmo,
@@ -74,9 +74,9 @@ else{
 // ### DESAFIOS ###
 // --- 1 ---
 const generoFilme    =   prompt("Digite o genero do filme");
-const valorIngresso  =   Number(prompt("Digite o valor do ingresso"));
+const valorFilme  =   Number(prompt("Digite o valor do ingresso"));
 
-if(generoFilme.toLowerCase() == 'fantasia' && valorIngresso < 15){
+if(generoFilme.toLowerCase() == 'fantasia' && valorFilme < 15){
     const snack = prompt("Qual snack você irá comprar?");
     console.log("Bom filme!");
     console.log("Aproveite seu", snack);
@@ -86,20 +86,20 @@ else{
 }
 
 // --- 2 ---- 
-function valores(etapa){
+function valorIngressoes(etapa){
     if(etapa.toUpperCase() == 'DT'){
         switch (categoria) {
             case '1':
-                valor = 660.00;
+                valorIngresso = 660.00;
                 break;
             case '2':
-                valor = 440.00;
+                valorIngresso = 440.00;
                 break;
             case '3':
-                valor = 330.00;
+                valorIngresso = 330.00;
                 break;
             case '4':
-                valor = 170.00;
+                valorIngresso = 170.00;
                 break;
             default:
                 console.log("Categoria inválida");
@@ -109,16 +109,16 @@ function valores(etapa){
     else if(etapa.toUpperCase() == 'SF'){
         switch (categoria) {
             case '1':
-                valor = 1320.00;
+                valorIngresso = 1320.00;
                 break;
             case '2':
-                valor = 880.00;
+                valorIngresso = 880.00;
                 break;
             case '3':
-                valor = 550.00;
+                valorIngresso = 550.00;
                 break;
             case  '4':
-                valor = 220.00;
+                valorIngresso = 220.00;
                 break;
             default:
                 console.log("Categoria inválida");
@@ -128,16 +128,16 @@ function valores(etapa){
     else if(etapa.toUpperCase() == 'FI'){
         switch (categoria) {
             case '1':
-                valor = 1980.00;
+                valorIngresso = 1980.00;
                 break;
             case '2':
-                valor = 1320.00;
+                valorIngresso = 1320.00;
                 break;
             case '3':
-                valor = 880.00;
+                valorIngresso = 880.00;
                 break;
             case '4':
-                valor = 330.00;
+                valorIngresso = 330.00;
                 break;
             default:
                 console.log("Categoria inválida");
@@ -157,9 +157,9 @@ function imprimir(jogo){
         console.log("Etapa do jogo:", etapaJogo.toUpperCase());
         console.log("Categoria", categoria);
         console.log("Quantidade de Ingressos:", quantidade);
-        console.log("---Valores---");
-        console.log("Valor ingresso: R$", valor);
-        console.log("Valor total: R$", (valor * quantidade));
+        console.log("---Valor---");
+        console.log("Valor Ingresso: R$", valorIngresso);
+        console.log("Valor total: R$", (valorIngresso * quantidade));
     }
     
     else if(jogo.toUpperCase() == 'IN'){
@@ -169,9 +169,9 @@ function imprimir(jogo){
         console.log("Etapa do jogo:", etapaJogo.toUpperCase());
         console.log("Categoria", categoria);
         console.log("Quantidade de Ingressos:", quantidade);
-        console.log("---Valores---");
-        console.log("Valor ingresso: U$", (valor * 4.10).toFixed(2));
-        console.log("Valor total: U$", ((valor * 4.10) * quantidade).toFixed(2));
+        console.log("---Valor---");
+        console.log("Valor Ingresso: U$", (valorIngresso * 4.10).toFixed(2));
+        console.log("Valor total: U$", ((valorIngresso * 4.10) * quantidade).toFixed(2));
     }
 }
 
@@ -180,10 +180,10 @@ const tipoJogo       =    prompt("Digite o tipo do jogo: IN - internacional; DO 
 const etapaJogo      =    prompt("Digite a etapa do jogo: DT - decisão de terceiro lugar; SF - semi-final; FI - final");
 const categoria      =    prompt("Digite a categoria: 1, 2, 3 ou 4");
 const quantidade     =    prompt("Digite a quantidade de ingressos");
-let valor = 0;
+let valorIngresso = 0;
 
 if(tipoJogo.toUpperCase() == 'DO' || tipoJogo.toUpperCase() == 'IN'){
-    valores(etapaJogo.toUpperCase());
+    valorIngressoes(etapaJogo.toUpperCase());
     imprimir(tipoJogo.toUpperCase());
 }    
 else{
