@@ -9,8 +9,8 @@ const vencedor = (valorUser, valorComputador) => {
       return 'Empate!';
    }
 }
-// --- UTILIZANDO OBJETO PARA ARMAZENAR AS CARTAS ---
 
+// --- UTILIZANDO OBJETO PARA ARMAZENAR AS CARTAS ---
 const cartaUsuario = {
    carta1: comprarCarta(),
    carta2: comprarCarta()
@@ -34,3 +34,24 @@ if(jogo){
 else{
    console.log("Não");
 } 
+
+// --- UTILIZANDO ARRAY PARA ARMAZENAR AS CARTAS ---
+
+// const cartaUser = [comprarCarta(), comprarCarta()];
+// const cartaPc   = [comprarCarta(), comprarCarta()];
+
+// console.log("Boas vindas ao jogo de Blackjack!");
+// const jogo = confirm("Quer iniciar uma nova rodada?");
+
+// if(jogo){
+//    const valorUser = cartaUser[0].valor + cartaUser[1].valor;
+//    const valorPc   = cartaPc[0].valor   + cartaPc[1].valor;
+
+//    console.log("Usuário - cartas:", cartaUser[0].texto, cartaUser[1].texto, "- pontuação:", valorUser);
+//    console.log("Usuário - cartas:", cartaPc[0].texto,   cartaPc[1].texto,   "- pontuação:", valorPc);
+
+//    console.log(vencedor(valorUser, valorPc));
+// }
+// else{
+//    console.log("Não");
+// } 
