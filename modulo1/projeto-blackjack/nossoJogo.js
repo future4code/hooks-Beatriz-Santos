@@ -28,11 +28,11 @@ if(jogo){
 
    console.log("Usuário - cartas:", cartaUsuario.carta1.texto,  cartaUsuario.carta2.texto,  "- pontuação:", valorUsuario);
    console.log("Usuário - cartas:", cartaComputer.carta1.texto, cartaComputer.carta2.texto, "- pontuação:", valorComputer);
-
+   
    console.log(vencedor(valorUsuario, valorComputer));
 }
 else{
-   console.log("Não");
+   console.log("O jogo acabou");
 } 
 
 // --- UTILIZANDO ARRAY PARA ARMAZENAR AS CARTAS ---
@@ -53,5 +53,5 @@ else{
 //    console.log(vencedor(valorUser, valorPc));
 // }
 // else{
-//    console.log("Não");
+//    console.log("O jogo acabou");
 // } 
