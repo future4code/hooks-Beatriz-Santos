@@ -7,7 +7,6 @@ O valor exibido no console será 10.
     b) Tentei usar o (for of) para mostrar o indice, não consegui, porem pesquisando encontrei o (for in), que é utilizado para isso.
 
 3 - a) Irá imprimir a seguinte linha ' * ** *** **** '
-
 */
 // ### EXERCICIO DE ESCRITA ###
 // --- 1 ---
@@ -43,12 +42,12 @@ function pares(array){
     let par = [];
     for(let i = 0; i < array.length; i++){
         if((array[i] % 2) == 0){
-            par[i] = array[i];
+            par.push(array[i]);
         }
     }
     console.log('Pares:', par);
 }
-function strings(array){let par = [];
+function strings(array){
     console.log('--------String--------');
     let valorString = []
     for(let i = 0; i < array.length; i++){
@@ -72,10 +71,62 @@ function maiorMenor(array){
     console.log('O menor número é', menor);
 }
 
-let arrayOriginal = [100, 200, 305, 17, 50];
+let arrayOriginal = [100, 200, 305, 17, 3758];
 
 imprimirValores(arrayOriginal);
 dividirValores(arrayOriginal);
 pares(arrayOriginal);
 strings(arrayOriginal);
 maiorMenor(arrayOriginal);
+
+// ### DESAFIOS ###
+// --- 1 ---
+const numero = Number(prompt('Escolha um número'));
+let numeroChute = Number(prompt('Tente adivinhar'));
+let chute = 1;
+
+if(numeroChute != numero){
+    for(let i = 1; numeroChute != numero; i++){
+        console.log('O número chutado foi:', numeroChute);
+        if(numeroChute > numero){
+            console.log('Errrooouuuuu. O número escolhido é menor');
+            numeroChute = prompt('Tenta de novo:');
+        }
+        else if(numeroChute < numero){
+            console.log('Errrooouuuuu. O número escolhido é maior ');
+            numeroChute = prompt('Tenta de novo: ')
+        }
+        chute = i;
+    }
+    console.log('Aleluiaaaa, até que enfim !!!');
+    console.log('O número de tentativas foi: ', chute)
+}
+else{
+    console.log('Carambaaaa tô chocadaaaa, de primeira. PARABÉNSSSS');
+}
+
+// --- 2 ---
+ const numeroPc = (Math.random() * 100).toFixed(0); // Achei mais facil utilizar o toFixed, para deixar claro que queria um numero inteiro
+let numeroChutado = Number(prompt('Tente adivinhar. Digite números de 0 a 100'));
+let chutes = 1;
+// console.log('numero sorteado', numeroPc);
+
+if(numeroChutado != numeroPc){
+    for(let i = 1; numeroChutado != numeroPc; i++){
+        console.log('O número chutado foi:', numeroChutado);
+        if(numeroChutado > numeroPc){
+            console.log('Errrooouuuuu. O número escolhido é menor');
+            numeroChutado = prompt('Tenta de novo. Digite números de 0 a 100');
+        }
+        else if(numeroChutado < numeroPc){
+            console.log('Errrooouuuuu. O número escolhido é maior ');
+            numeroChutado = prompt('Tenta de novo. Digite números de 0 a 100');
+        }
+        chutes = i;
+    }
+    console.log('Aleluiaaaa, até que enfim !!!');
+    console.log('O número de tentativas foi: ', chutes)
+}
+else{
+    console.log('Carambaaaa tô chocadaaaa, de primeira. PARABÉNSSSS');
+}
