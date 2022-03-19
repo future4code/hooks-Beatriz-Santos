@@ -161,11 +161,7 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-    let soma = 0;
-    for(let i = 0; i < contas.length; i++){
-        soma += contas[i].compras;
-    }
-    console.log(soma)
+    
 }
 
 // EXERCÍCIO 15A
