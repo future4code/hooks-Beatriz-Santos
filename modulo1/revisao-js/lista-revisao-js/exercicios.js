@@ -33,7 +33,6 @@ function retornaNumerosParesElevadosADois(array) {
     let pares = array.filter((item) => {
         return item = item % 2 == 0;
     });
-
     let elevadoADois = pares.map((item) => {
         return Math.pow(item, 2);
     });
@@ -43,7 +42,13 @@ function retornaNumerosParesElevadosADois(array) {
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-  
+    let maior = 0;
+    for(let i = 0; i < array.length; i++){
+        if(array [i] > maior){
+            maior = array[i];
+        }
+    }
+    return maior;
 }
 
 // EXERCÍCIO 07
