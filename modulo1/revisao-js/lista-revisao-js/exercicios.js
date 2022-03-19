@@ -110,15 +110,15 @@ function retornaSegundoMaiorESegundoMenor(array) {
             segundoMenor = array[i];
         }
     }
-    segundoMaiorEMenor = [segundoMaior, segundoMenor]
-    console.log(array);
-    console.log(segundoMaiorEMenor);
+    segundoMaiorEMenor = [segundoMaior, segundoMenor];
+    
     return segundoMaiorEMenor;
 }
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-   
+    
+    return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores.join(', ')}.`
 }
 
 // EXERCÍCIO 12
