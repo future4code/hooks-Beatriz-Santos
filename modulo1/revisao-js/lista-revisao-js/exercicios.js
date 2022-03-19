@@ -132,17 +132,40 @@ function retornaPessoaAnonimizada(pessoa) {
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-   
+
+    function pessoasAutorizadas(dadosPessoas){
+       let permissao = dadosPessoas.filter((item) => {
+            if(item.altura > 1.5 && item.idade > 14 && item.idade < 60){
+                return item;
+            }
+       });
+        return permissao;
+    }
+
+    return pessoasAutorizadas(pessoas)
 }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-  
+    
+    function pessoasNaoAutorizadas(dadosPessoas){
+        let permissao = dadosPessoas.filter((item) => {
+             if(item.altura <= 1.5 || item.idade <= 14 || item.idade >= 60){
+                 return item;
+             }
+        });
+         return permissao;
+     }
+  return pessoasNaoAutorizadas(pessoas)
 }
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-
+    let soma = 0;
+    for(let i = 0; i < contas.length; i++){
+        soma += contas[i].compras;
+    }
+    console.log(soma)
 }
 
 // EXERCÍCIO 15A
