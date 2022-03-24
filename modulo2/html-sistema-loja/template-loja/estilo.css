@@ -5,6 +5,8 @@
 }
 header{
     display: flex;
+    margin-bottom: 20px;
+    border-bottom: 2px solid black;
 }
 h1{
     font-size: 50px;
@@ -30,6 +32,8 @@ a{
     text-decoration: none;
     display: block;
     padding: 15px;
+    font-size: 15px;
+    font-family: sans-serif;
 }
 .conteudo{
     margin: 25px;
@@ -41,6 +45,15 @@ a{
     font-family:'Times New Roman', Times, serif;
     text-align: center;
     margin-bottom: 40px;
+    text-decoration: underline;
+}
+.conteudo ul{
+    margin-left: 20px;
+    text-align: left;
+}
+.conteudo ul li{
+    padding: 10px;
+    list-style: none;
 }
 #itens{
     text-align: center;
@@ -52,6 +65,30 @@ a{
     padding: 20px;
     font-size: 20px;
     font-family:monospace;
+}
+#adicionar-carrinho{
+    text-align: left;
+    width: 50%;
+    margin-left: 30%;
+    padding: 10px;
+}
+#adicionar-carrinho div{
+    padding: 15px;
+}
+#adicionar-carrinho div label{
+    text-align: left;
+}
+#adicionar-carrinho div input{
+    border: 2px solid black;
+    border-radius: 5px ;
+    padding: 5px ;
+    width: 50%;
+}
+.form-add button{
+    padding: 10px 50px;
+    margin-left: 30%;
+    border-radius: 5px;
+    font-size: 15px;
 }
 footer{
     text-align: center;
