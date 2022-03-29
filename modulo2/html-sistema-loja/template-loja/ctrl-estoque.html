@@ -5,23 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Controle de Estoque</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <div>
-        <h1>Pratas da Bia</h1>
-    </div>
+    <header>
+        <div class="apresentacao">
+            <h1><em>Pratas da Bia</em>!</h1>
+            <legend>Se houver pedras no caminho, que sejam das suas joias 💎❤️</legend>
+        </div>
     
-    <div>
-        <a href="index.html" style="color: black;">Página Inicial</a>
-        <a href="ctrl-estoque.html" style="color: black">Controle de Estoque</a>
-        <a href="add-produto.html"  style="color: black">Adicionar Produto</a>
-        <a href="funcionarios.html" style="color: black">Funcionários</a>
-    </div>
-
-    <h2><i>Itens disponiveis</i></h2>
-
-    <table>
-        <tr >
+        <div class="links">
+            <ul>
+                <li><a href="index.html" style="color: black;">Página Inicial</a> </li>
+                <li><a href="ctrl-estoque.html" style="color: black">Controle de Estoque</a></li>
+                <li><a href="add-produto.html"  style="color: black">Adicionar Produto</a></li>
+                <li><a href="funcionarios.html" style="color: black">Funcionários</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="conteudo">
+    <h2><u>Itens disponiveis</u></h2>
+    <table id="itens">
+        <tr class="brincos" >
             <th>Foto</th>
             <th>Descrição</th>
             <th>Preço (R$)</th>
@@ -29,41 +34,53 @@
         </tr>
 
         <tr>
-            <td><img src="./fotos/par-brinco-01.jpg" alt="Brinco de prata envelhecida" width="90"/></td>
+            <td><img src="./fotos/par-brinco-01.jpg" alt="Brinco de prata envelhecida" width="150"/></td>
             <td>&nbsp Brinco de prata envelhicida, com detalhe espelhado. </td>
             <td>&nbsp 145,00 </td>
             <td>&nbsp 57 </td>
         </tr>
 
         <tr>
-            <td><img src="./fotos/par-brinco-02.jpg" alt="Brinco de prata envelhecida" width="90"/></td>
+            <td><img src="./fotos/par-brinco-02.jpg" alt="Brinco de prata envelhecida" width="150"/></td>
             <td>&nbsp Brinco de prata redondo com Zircônia Cristal </td>
             <td>&nbsp 85,00 </td>
             <td>&nbsp 78 </td>
         </tr>
 
         <tr>
-            <td><img src="./fotos/par-brinco-03.jpg" alt="Brinco de prata envelhecida" width="90"/></td>
+            <td><img src="./fotos/par-brinco-03.jpg" alt="Brinco de prata envelhecida" width="150"/></td>
             <td>&nbsp Brinco de Prata Balanço com Madrepérola Rosa Redonda e Marcassitas</td>
             <td>&nbsp 295,00</td>
             <td>&nbsp 26 </td>
         </tr>
 
         <tr>
-            <td><img src="./fotos/par-brinco-04.jpg" alt="Brinco de prata envelhecida" width="90"/></td>
+            <td><img src="./fotos/par-brinco-04.jpg" alt="Brinco de prata envelhecida" width="150"/></td>
             <td>&nbsp Brinco de Prata Balanço Redondo de Opala com Gota de Zircônia Cristal</td>
             <td>&nbsp 255,00 </td>
             <td>&nbsp 45 </td>
         </tr>
         
         <tr>
-            <td><img src="./fotos/par-brinco-05.jpg" alt="Brinco de prata envelhecida" width="90"/></td>
+            <td><img src="./fotos/par-brinco-05.jpg" alt="Brinco de prata envelhecida" width="150"/></td>
             <td>&nbsp Brinco de Prata Longo com Gota de Zircônia Cristal</td>
             <td>&nbsp 185,00</td>
             <td>&nbsp 19 </td>
         </tr>
 
     </table>
+</div>
+    <footer>
+        <div>
+            <p>Siga-nos nas redes sociais!</p>
+    
+            <div>
+                <img src="./fotos/redeSocialInsta.png" alt="Instagram" width="30"/>
+                <img src="./fotos/redeSocialFace.png" alt="Facebook" width="30"/>
+                <img src="./fotos/redeSocialGmail.png" alt="instagram" width="30"/>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
