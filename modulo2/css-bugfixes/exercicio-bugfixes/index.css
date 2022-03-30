@@ -104,16 +104,18 @@ div:nth-child(2),
 div:last-child {
     text-align: center;
 }
-
 table {
     margin-left: auto;
     margin-right: auto;
     width: 60%;
 }
+.icone{
+    background-color: white;
+    width: 15px;
+}
 td img{
     width: 50px;
 }
-
 td button {
     background-color: #fadf63;
     width: 150px;
