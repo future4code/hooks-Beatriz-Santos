@@ -104,14 +104,19 @@ div:nth-child(2),
 div:last-child {
     text-align: center;
 }
-table {
-    margin-left: auto;
-    margin-right: auto;
-    width: 60%;
+input{
+    border-left: none;
+    border-right: none;
+    border-top: none;
 }
 .icone{
     background-color: white;
     width: 15px;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
 }
 td img{
     width: 50px;
