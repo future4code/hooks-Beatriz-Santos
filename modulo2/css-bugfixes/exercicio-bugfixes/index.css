@@ -72,6 +72,12 @@ div img {
     padding: 100px;
     height: 200px;
 }
+#container-de-descricao>p {
+    display: flex;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
 #container-de-descricao>ol {
     padding: 15px 0px;
     
