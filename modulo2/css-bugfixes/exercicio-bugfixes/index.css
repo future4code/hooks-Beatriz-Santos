@@ -110,6 +110,9 @@ table {
     margin-right: auto;
     width: 60%;
 }
+td img{
+    width: 50px;
+}
 
 td button {
     background-color: #fadf63;
