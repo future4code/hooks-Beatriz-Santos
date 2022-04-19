@@ -25,36 +25,36 @@ function App() {
         </nav>
         <section class="painel-de-videos">
           <div className="box-pagina-principal media1" onClick={reproduzVideo}>
-            <img src="https://picsum.photos/400/400?a=1 " alt="vídeo de paisagens"/>
-            <h4>Paisagens</h4>
+            <img src="https://picsum.photos/400/400?a=1 " alt="vídeo"/>
+            <h4>vídeo</h4>
           </div>
           <div className="box-pagina-principal media2" onClick={reproduzVideo}>
-              <img src="https://picsum.photos/400/400?a=2 " alt="vídeo sobre predios"/>
-              <h4>Prédios</h4>
+              <img src="https://picsum.photos/400/400?a=2 " alt="vídeo"/>
+              <h4>vídeo</h4>
           </div>
           <div className="box-pagina-principal media3" onClick={reproduzVideo}>
-              <img src="https://picsum.photos/400/400?a=3 " alt="vídeo de gatinho"/>
-              <h4>Gatinhos</h4>
+              <img src="https://picsum.photos/400/400?a=3 " alt="vídeo"/>
+              <h4>vídeo</h4>
           </div>
           <div className="box-pagina-principal media4" onClick={reproduzVideo}>
-              <img src="https://picsum.photos/400/400?a=4 " alt="vídeo sobre escritórios"/>
-              <h4>Escritório</h4>
+              <img src="https://picsum.photos/400/400?a=4 " alt="vídeo"/>
+              <h4>vídeo</h4>
           </div>
           <div className="box-pagina-principal media5" onClick={reproduzVideo}>
-              <img src="https://picsum.photos/400/400?a=5 " alt="vídios sobre cidades"/>
-              <h4>Cidades</h4>
+              <img src="https://picsum.photos/400/400?a=5 " alt="vídio"/>
+              <h4>vídeo</h4>
           </div>
           <div className="box-pagina-principal media6" onClick={reproduzVideo}>
-              <img src="https://picsum.photos/400/400?a=6 " alt="vídeo de paisagens 2"/>
-              <h4>Paisagens 2</h4>
+              <img src="https://picsum.photos/400/400?a=6 " alt="vídeo"/>
+              <h4>vídeo</h4>
           </div>
           <div className="box-pagina-principal media7" onclick={reproduzVideo}>
-              <img src="https://picsum.photos/400/400?a=7 " alt="vídeo sobre bebês"/>
-              <h4>Bebês</h4>
+              <img src="https://picsum.photos/400/400?a=7 " alt="vídeo"/>
+              <h4>vídeo</h4>
           </div>
           <div className="box-pagina-principal media8" onClick={reproduzVideo}>
-              <img src="https://picsum.photos/400/400?a=8 " alt="vídeo sobre pontes"/>
-              <h4>Pontos</h4>
+              <img src="https://picsum.photos/400/400?a=8 " alt="vídeo"/>
+              <h4>vídeo</h4>
           </div>
         </section>
       </main>
