@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+   html, body{
+    width: 100%;
+    height: 100%;
+     position:static; 
+  } 
+  header{
+    display: flex;
+    background-color: orange;
+    padding: 15px 20px;
+    justify-content: space-between;
+  }
+  conteudo{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-auto-rows: 300px;
+    /* height:60%; */
+    margin:2% 2%;
+  }
+  conteudo>div{
+    margin: 10px;
+  }
+  div p{
+    font-size: 20px;
+    text-align:center;
+    margin-top:5%;
+  }
+  div.video{
+    border: 2px outset gray;
+  }
+  
+  video{
+    width:100%;
+  }
+  .conteudo-videos{
+      display:flex;
+      margin: 2%;
+  }
+  .video01{
+      margin-left: 5%;
+      width: 60%;
+  }
+  .video01>h2{
+      margin-bottom:2% ;
+  }
+  .videos-relacionados{
+      /* display: block; */
+      width: 25%;
+      margin-left: 5%;
+  }
+  .videos-relacionados>video{
+      float: right;
+      padding: 5%;
+  }
+  .videos-relacionados>p{
+      float: left;
+      font-size: 15px;
+  }
+  footer{
+    background-color: orange;
+    font-size: 15px;
+    height: 30px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/3;
+  }
+  @media screen and (max-device-width: 750px) {
+    conteudo{
+      grid-template-columns: repeat(1, 80%);
+      grid-auto-rows: 300px;
+      margin: 0 auto;
+      width: 100%;
+      justify-content: center;
+    }
+    conteudo>div{
+      width: 100%;
+      height: 500px;
+    }
+    .video{
+      width: 100%;
+    }
+  }

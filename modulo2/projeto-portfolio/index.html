@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" 
+          integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"><!--Link animação seta-->
+    <link rel="stylesheet" href="style.css">
+    <title>Beatriz de Souza Santos</title>
+</head>
+<body>
+    <header>
+        <div>
+            <h4>Beatriz de Souza Santos</h4>
+        </div>
+        <ul>
+            <li>
+                <a href="#sobre-mim"><b>Sobre</b></a> <!--"target blank" é para abrir em uma nova aba-->
+            </li>
+            <li>
+                <a href="#projetos"><b>Projetos</b></a>
+            </li>
+            <li>
+                <a href="#contato"><b>Contato</b></a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <section class="container">
+            <div id="nome">
+                <h1>Beatriz de Souza Santos</h1>
+                <h5>Dev Fullstack</h5>
+            </div>
+
+            <div onclick="rotacaoSeta()" id="seta">
+                <i id="animacao" class="fas fa-sort-down"></i>
+            </div>
+
+            <div style="display: none;" id="sobre" >
+                <p><b>Muito prazer! Me chamo Beatriz, tenho 21 anos e estou começando no ramo da tecnologia, já possuo um conhecimento prévio sbre algumas tecnologia,
+                   mas isso você lerá mais pra frente. Esse portifolio foi desenvolvido com css, html e pouco javaScript, espero que tenha gostado :)</b></p>
+            </div>
+
+            <div class="form">
+                <div>
+                    <p>Deixe seu Contato</p>
+                </div>
+                <form action="">
+                    <input type="text" placeholder="Digite seu email">
+                    <button>Enviar!</button>
+                </form>
+            </div>
+        </section>
+        <section id="sobre-mim">
+            <p>
+                <b>
+                    Me chamo Beatriz, tenho 21 anos. Comecei a estudar programação em 2015, pelo IFPR consegui meu diploma de tecnico em informática e acabei me apaixonando pela área, depois de terminar o curso em 2018 estudei por conta própria, pois era mais facil de conciliar os horário com o trabalho, participei de um projeto do Gama Academy com parceria com a Ambev e foi uma experiencia fantastica. Depois dessa vivencia decidi que realmente quero trabalhar com programação e me matriculei na Labenu, que é o curso que faço atualmente. Conheço linguagens como Java, PHP, javaScript, typeScript, html e css. 
+                </b>
+            </p>
+            <div>
+                <img class="minha-foto" src="./minha-foto.jpg">
+            </div>
+
+        </section>
+        <section id="projetos">
+            <p><b>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum iusto ipsa fugiat sequi, minima quae optio, harum, nesciunt magnam sunt voluptas dicta voluptatibus necessitatibus quia totam adipisci ad eaque cum Lorem ipsum dolor sit amet consectetur adipisicing elit. In dolorem nemo iste nisi provident cumque ut consequatur facere explicabo quibusdam, labore eaque dolorum pariatur possimus veniam a quaerat est non dolores minima hic? Doloribus, illum fuga. Molestiae dolore laboriosam facere deserunt rerum animi a consectetur voluptatem exercitationem veritatis distinctio sit pariatur eum, perferendis laborum labore ullam! Beatae, id ab. Fuga corporis id, natus quis quas eius tenetur et itaque unde enim modi eos expedita dolorem quasi. Mollitia consequatur molestias corporis consequuntur, rem at officia accusamus, et veniam aut labore facere?</b>
+            </p>
+
+        </section> 
+        <section id="contato">
+            <p><b>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum iusto ipsa fugiat sequi, minima quae optio, harum, nesciunt magnam sunt voluptas dicta voluptatibus necessitatibus quia totam adipisci ad eaque cum Lorem ipsum dolor sit amet consectetur adipisicing elit. In dolorem nemo iste nisi provident cumque ut consequatur facere explicabo quibusdam, labore eaque dolorum pariatur possimus veniam a quaerat est non dolores minima hic? Doloribus, illum fuga. Molestiae dolore laboriosam facere deserunt rerum animi a consectetur voluptatem exercitationem veritatis distinctio sit pariatur eum, perferendis laborum labore ullam! Beatae, id ab. Fuga corporis id, natus quis quas eius tenetur et itaque unde enim modi eos expedita dolorem quasi. Mollitia consequatur molestias corporis consequuntur, rem at officia accusamus, et veniam aut labore facere?</b>
+            </p>
+
+        </section>
+    </main>
+    <script>
+        function rotacaoSeta(){
+            var seta = document.getElementById('animacao');
+            seta.classList.toggle('rotate');
+
+            var texto = document.getElementById('sobre');
+            texto.classList.toggle('mostrarTexto');
+        }
+    </script>
+</body>
+</html>
