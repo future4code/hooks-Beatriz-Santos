@@ -1,13 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
+// COMPONENTES
 import {IconeComContador} from '../IconeComContador/IconeComContador'
 
+// IMAGENS
 import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
 
+// ESTILIZAÇÃO
 const PostContainer = styled.div`
   border: 1px solid gray;
   width: 300px;
@@ -39,8 +42,10 @@ const UserPhoto = styled.img`
 const PostPhoto = styled.img`
   width: 100%;
 `
-
+// ------------------------------------
+// CRIAÇÃO CLASSE
 class Post extends React.Component {
+// FUNCIONALIDADE DO SITE
   state = {
     curtido: false,
     numeroCurtidas: 0,
@@ -49,60 +54,72 @@ class Post extends React.Component {
   }
 
   onClickCurtida = () => {
-    console.log('Curtiu!')
+    
+    if(!this.state.curtido){
+      this.setState({
+        curtido : !this.state.curtido,
+        numeroCurtidas : this.state.numeroCurtidas + 1
+      });
+    }
+    else{
+      this.setState({
+        curtido : false,
+        numeroCurtidas : this.state.numeroCurtidas - 1
+      });
+    }
   }
 
   onClickComentario = () => {
     this.setState({
       comentando: !this.state.comentando
-    })
+    });
   }
 
   aoEnviarComentario = () => {
     this.setState({
       comentando: false,
-      numeroComentarios: this.state.numeroComentarios + 1
-    })
+      numeroComentarios: this.state.numeroComentarios + 1,
+    });
   }
 
   render() {
-    let iconeCurtida
+    let iconeCurtida;
 
     if(this.state.curtido) {
-      iconeCurtida = iconeCoracaoPreto
+      iconeCurtida = iconeCoracaoPreto ;
     } else {
-      iconeCurtida = iconeCoracaoBranco
+      iconeCurtida = iconeCoracaoBranco;
     }
 
-    let componenteComentario
+    let componenteComentario;
 
     if(this.state.comentando) {
       componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
     }
 
     return <PostContainer>
-      <PostHeader>
-        <UserPhoto src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
-        <p>{this.props.nomeUsuario}</p>
-      </PostHeader>
+        <PostHeader>
+          <UserPhoto src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
+          <p>{this.props.nomeUsuario}</p>
+        </PostHeader>
 
-      <PostPhoto src={this.props.fotoPost} alt={'Imagem do post'}/>
+        <PostPhoto src={this.props.fotoPost} alt={'Imagem do post'}/>
 
-      <PostFooter>
-        <IconeComContador
-          icone={iconeCurtida}
-          onClickIcone={this.onClickCurtida}
-          valorContador={this.state.numeroCurtidas}
-        />
+        <PostFooter>
+          <IconeComContador
+            icone={iconeCurtida}
+            onClickIcone={this.onClickCurtida}
+            valorContador={this.state.numeroCurtidas}
+          />
 
-        <IconeComContador
-          icone={iconeComentario}
-          onClickIcone={this.onClickComentario}
-          valorContador={this.state.numeroComentarios}
-        />
-      </PostFooter>
-      {componenteComentario}
-    </PostContainer>
+          <IconeComContador
+            icone={iconeComentario}
+            onClickIcone={this.onClickComentario}
+            valorContador={this.state.numeroComentarios}
+          />
+        </PostFooter>
+        {componenteComentario}
+      </PostContainer>
   }
 }
 
