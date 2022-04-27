@@ -13,10 +13,11 @@ const InputComentario = styled.input`
 `
 
 export class SecaoComentario extends Component {
+// Inicializando os stados das propriedades
 	state = {
 		valorComentario : ''
 	}
-
+// Atualizando o valor digitado no input comentario
 	onChangeComentario = (event) => {
 		this.setState({valorComentario : event.target.value})
 		console.log(this.state.valorComentario)
