@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
+import ExibirMensagem from './components/ExibirMensagem'
 
 class App extends React.Component {
   state = {
     usuarioNome: '',
     usuarioMensagem: ''
 }
+resultado = '';
 onChangeInputNome = (event) =>{
     this.setState({usuarioNome: event.target.value})
 }
@@ -14,7 +16,7 @@ onChangeInputMensagem = (event) =>{
 }
 enviarMensagem = () =>{
     console.log('Mensagem Enviada');
-    console.log(this.state.usuarioNome + ': '+ this.state.usuarioMensagem);
+    this.resultado = (this.state.usuarioNome + ': '+ this.state.usuarioMensagem);
     
     // 'Zerar' inputs
     this.setState({usuarioNome: ''});
@@ -24,7 +26,7 @@ render (){
     return(
         <div className = {'App'}>
           <div className = {'tela-das-mensagens'}>
-            
+            <ExibirMensagem valor = {this.resultado} />
           </div>
           <div className = {'funcionalidades'}>
             <input  className = {'nome-usuario'}     placeholder = {'Usuário'}  onChange = {this.onChangeInputNome}     value = {this.state.usuarioNome} />
