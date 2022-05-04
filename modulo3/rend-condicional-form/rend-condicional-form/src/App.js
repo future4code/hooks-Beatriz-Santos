@@ -5,8 +5,6 @@ import InformacaoEnsino from './components/InformacaoEnsino/InformacaoEnsino';
 import InformacaoEnsinoSuperior from './components/InformacaoEnsinoSuperior/InformacaoEnsinoSuperior';
 import FinalFormulario from './components/FinalFormulario/FinalFormulario';
 
-
-
 class App extends React.Component { 
   state = {
     proximaPagina: 0
