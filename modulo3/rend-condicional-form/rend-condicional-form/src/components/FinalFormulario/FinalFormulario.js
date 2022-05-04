@@ -4,6 +4,7 @@ import styled from 'styled-components'
 const Final = styled.h2 `
     text-align:center;
 `
+
 class FinalFormulario extends React.Component {
     render(){
         return(

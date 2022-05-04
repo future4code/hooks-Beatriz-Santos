@@ -11,14 +11,14 @@ class App extends React.Component {
    }
  
   mudarPagina = () =>{
-    this.setState({proximaPagina: this.state.proximaPagina + 1 })
+    this.setState({proximaPagina: this.state.proximaPagina + 1 });
   }
  
   paginaSeguinte = () =>{
       switch(this.state.proximaPagina){
        case 0:
          return <DadosGerais mudarEstado={this.mudarPagina}/>
-       
+      
        case 1:
          return <InformacaoEnsino mudarEstado={this.mudarPagina}/>
        
