@@ -1,7 +1,10 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+
+//Componente post é filho de App
 import Post from './components/Post/Post';
 
+// Estilização do MAINCONTAINER
 const MainContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -13,6 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <MainContainer>
+        {/* Chamando o componente post e passando os valores do props */}
         <Post
           nomeUsuario={'paulinha'}
           fotoUsuario={'https://picsum.photos/50/49'}

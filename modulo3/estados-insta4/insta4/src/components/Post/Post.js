@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-// COMPONENTES
+// COMPONENTES IMPORTADOS
 import {IconeComContador} from '../IconeComContador/IconeComContador'
 
 // IMAGENS
@@ -46,13 +46,14 @@ const PostPhoto = styled.img`
 // CRIAÇÃO CLASSE
 class Post extends React.Component {
 // FUNCIONALIDADE DO SITE
+// Inicializado os estados das funções 
   state = {
     curtido: false,
     numeroCurtidas: 0,
     comentando: false,
     numeroComentarios: 0
   }
-
+// Função para descobrir se o posta já está curtido ou não
   onClickCurtida = () => {
     
     if(!this.state.curtido){
@@ -68,13 +69,13 @@ class Post extends React.Component {
       });
     }
   }
-
+// Escrevendo comentario
   onClickComentario = () => {
     this.setState({
       comentando: !this.state.comentando
     });
   }
-
+// Mudando valor do contador quando o post for comentado
   aoEnviarComentario = () => {
     this.setState({
       comentando: false,
