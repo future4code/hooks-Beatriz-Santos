@@ -13,7 +13,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "",
+						"value": "beatriz-santos-hooks",
 						"type": "text"
 					}
 				],
@@ -42,11 +42,11 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": ""
+						"value": "beatriz-santos-hooks"
 					}
 				],
 				"url": {
-					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/search?name=string",
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/search?name=Aoo",
 					"protocol": "https",
 					"host": [
 						"us-central1-labenu-apis",
@@ -61,7 +61,7 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "string"
+							"value": "Aoo"
 						}
 					]
 				},
@@ -77,7 +77,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": ""
+						"value": "beatriz-santos-hooks"
 					}
 				],
 				"url": {
@@ -97,7 +97,7 @@
 					"variable": [
 						{
 							"key": "playlistId",
-							"value": "027f1eaf-3d07-46cf-aab3-7064d5935d80"
+							"value": "f862155b-2b1f-495b-a1ab-c58e193246c1"
 						}
 					]
 				},
@@ -115,13 +115,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "",
+						"value": "beatriz-santos-hooks",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"string\"\n}",
+					"raw": "{\n\t\"name\": \"Rap broo\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -196,12 +196,12 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": ""
+						"value": "beatriz-santos-hooks"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"string\",\n\t\"artist\": \"string\",\n\t\"url\": \"string\"\n}",
+					"raw": "{\n\t\"name\": \"Aham\",\n\t\"artist\": \"Lucas Lucco\",\n\t\"url\": \"https://www.youtube.com/watch?v=_bjbJgeCRvQ\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -225,7 +225,7 @@
 					"variable": [
 						{
 							"key": "playlistId",
-							"value": "027f1eaf-3d07-46cf-aab3-7064d5935d80"
+							"value": "f862155b-2b1f-495b-a1ab-c58e193246c1"
 						}
 					]
 				},
@@ -241,7 +241,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": ""
+						"value": "beatriz-santos-hooks"
 					}
 				],
 				"url": {
@@ -276,7 +276,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": ""
+						"value": "beatriz-santos-hooks"
 					}
 				],
 				"url": {
@@ -297,11 +297,11 @@
 					"variable": [
 						{
 							"key": "playlistId",
-							"value": ""
+							"value": "f862155b-2b1f-495b-a1ab-c58e193246c1"
 						},
 						{
 							"key": "trackId",
-							"value": ""
+							"value": "7853307d-c5cb-4765-958b-2ca9d3b5fc16"
 						}
 					]
 				},
