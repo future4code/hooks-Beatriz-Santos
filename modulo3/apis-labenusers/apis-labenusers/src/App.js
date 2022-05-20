@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React from 'react';
+import InserirDados from './components/InserirDados/InserirDados';
+import Usuarios from './components/Usuarios/Usuarios';
 
 let url = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users";
 const headers = {
@@ -10,36 +12,24 @@ const headers = {
   
 class App extends React.Component {
   state = {
+    botao: false
   }
-
-  pessoas = () => {
-    axios.get(url, headers).then((res) => {
-      console.log(res.data)
-    }).catch((err) =>{
-      console.log('Algo deu errado');
-    })
-  }
-
-  adicionar = () => {
-    const body = {
-      name: "",
-      email: ""
+  
+  trocarPagina = () => {
+    this.setState({botao: !this.state.botao});
+    if(this.state.botao){
+      <InserirDados/>
     }
-    axios.post(url, body, headers).then((res) => {
-        console.log(' Foi criado com sucesso')
-        // this.pessoas();
-    }).catch((err) => {
-      console.log('erro')
-    })
+    else{
+      <Usuarios />
+    }
   }
-
+  
   render(){
-    // const pessoas = this.state.pessoas.map((pessoas, index) => {
-    //   return <li key={index}>{pessoas}</li>
-    // })
     return (
       <div>
-        {this.pessoas()}
+        <button onClick={this.trocarPagina} value = {this.state.botao}>Trocar de Pagina</button>
+
       </div>
     );
   }
