@@ -12,15 +12,13 @@ class App extends React.Component {
   
   trocarPagina = () => {
     if(this.state.botao){
-     const paginaRenderizada = <InserirDados/> 
-     return paginaRenderizada;
+     return  <InserirDados/> ;
     }
+
     else{
-      const paginaRenderizada = <Usuarios />
-      return paginaRenderizada;
+      return <Usuarios />;
     }
   }
-
   mudarValor = () => {
     this.setState({botao: !this.state.botao});
   }
