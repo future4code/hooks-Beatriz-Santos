@@ -1,6 +1,27 @@
 import React from "react";
 import axios from "axios";
+import styled from 'styled-components'
 
+const Pagina = styled.div`
+    margin: 25px 0;
+`
+const Lista = styled.div`
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    border-bottom: 1px solid black;
+`
+const Nome = styled.p`
+    padding: 0 30px;
+`
+const Botao = styled.button`
+    background: none;
+    border: none;
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+`
 let url = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users";
 const headers = {
   headers: {
@@ -40,16 +61,17 @@ class InserirDados extends React.Component {
     render(){
         const listaPessoas = this.state.pessoas.map((pessoa, index) => {
             return(
-                <div>
-                    <span key={index}> {pessoa.name} </span>
-                    <button onClick={() => this.deletarPessoa(pessoa.id)}>X</button>
-                </div>
+                <>
+                    <Lista>
+                        <Nome key={index}> {pessoa.name} </Nome>
+                        <Botao onClick={() => this.deletarPessoa(pessoa.id)}>X</Botao>
+                    </Lista>
+                </>
             )
         })
         return(
             <>
-                <h1>Inserir Dados</h1>
-                <div>{listaPessoas}</div>
+                <Pagina>{listaPessoas}</Pagina>
             </>
         )
     }

@@ -17,6 +17,7 @@ const Item = styled.div`
 const Botao = styled.button`
     padding: 5px 10px;
     margin-top: 10px;
+    cursor: pointer;
 `
 const url = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users";
 const headers = {
