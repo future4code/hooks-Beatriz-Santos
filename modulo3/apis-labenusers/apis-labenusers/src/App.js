@@ -11,7 +11,7 @@ const Botao = styled.button`
 `
 class App extends React.Component {
   state = {
-    botao: true
+    botao: false
   }
   
   trocarPagina = () => {
@@ -30,7 +30,7 @@ class App extends React.Component {
   render(){
     return (
       <Pagina>
-        <Botao value = {this.state.botao} onClick={this.mudarValor}> Trocar de Pagina </Botao>
+        <button value = {this.state.botao} onClick={this.mudarValor}> Trocar de Pagina </button>
         {this.trocarPagina()}
       </Pagina>
     );
