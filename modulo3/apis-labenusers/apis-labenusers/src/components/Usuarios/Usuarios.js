@@ -1,15 +1,25 @@
 import React from "react";
 import axios from "axios";
 
-class Usuarios extends React.Component {
+let url = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users";
+const headers = {
+  headers: {
+    authorization: "beatriz-santos-hooks"
+  }
+}
 
-    // pessoas = () => {
-    //     axios.get(url, headers).then((res) => {
-    //       return(res.data)
-    //     }).catch((err) =>{
-    //       console.log('Algo deu errado');
-    //     })
-    //   }
+class Usuarios extends React.Component {
+    state = {
+        name: '',
+        email: ''
+    }
+
+    changeName = (event) => {
+        this.setState({name: event.target.value})
+    }
+    changeEmail = (event) =>{
+        this.setState({email: event.target.value});
+    }
     
     //   adicionar = () => {
     //     const body = {
@@ -29,9 +39,10 @@ class Usuarios extends React.Component {
             <div>
                 <h1>Usuarios</h1>
                 <label>Nome: </label>
-                <input/>
+                <input placeholder={"Nome"} onChange={this.changeName} value={this.state.name}/><br/>
                 <label>Email: </label>
-                <input/>
+                <input placeholder={"Email"} onChange={this.changeEmail} value = {this.state.email}/><br/>
+                <button>Salvar</button>
             </div>
         )
     }

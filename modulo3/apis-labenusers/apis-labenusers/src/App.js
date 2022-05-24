@@ -3,16 +3,11 @@ import React from 'react';
 import InserirDados from './components/InserirDados/InserirDados';
 import Usuarios from './components/Usuarios/Usuarios';
 
-let url = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users";
-const headers = {
-  headers: {
-    authorization: "beatriz-santos-hooks"
-  }
-}
+
   
 class App extends React.Component {
   state = {
-    botao: true
+    botao: false
   }
   
   trocarPagina = () => {
