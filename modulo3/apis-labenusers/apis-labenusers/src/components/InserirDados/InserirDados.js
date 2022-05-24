@@ -47,15 +47,20 @@ class InserirDados extends React.Component {
     
     deletarPessoa = (idPessoa) => {
         url = `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${idPessoa}`
-
-        axios.delete(url, headers).then((res) => {
-            const usuarioDeletado  = this.state.pessoas.filter((pessoa) => {
-                return pessoa.id !== idPessoa
+        if(window.confirm('Tem certeza de que deseja deletar?')){
+            axios.delete(url, headers).then((res) => {
+                const usuarioDeletado  = this.state.pessoas.filter((pessoa) => {
+                    return pessoa.id !== idPessoa
+                })
+                alert('Usuário deletado com sucesso!!')
+                return this.setState({pessoas: usuarioDeletado})
+            }).catch((err) => {
+                console.log('erro')
             })
-            return this.setState({pessoas: usuarioDeletado})
-        }).catch((err) => {
-            console.log('erro')
-        })
+        }
+        else{
+            alert('O usuário não foi deletado')
+        }
     }
 
     render(){
