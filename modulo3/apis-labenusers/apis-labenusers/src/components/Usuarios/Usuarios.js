@@ -28,24 +28,16 @@ class Usuarios extends React.Component {
         }
 
         axios.post(url, body, headers).then((res) =>{
-            console.log("Usuario Criado");
+            alert("Usuario criado com sucesso");
         }).catch((err) => {
-            console.log('erro')
+            if(err.response.data.message === 'Invalid email'){
+                alert("Email invalido.")
+            }
+            else{
+                alert("Por favor, preencha todos os campor e verifique seus dados")
+            }
         })
     }
-    //   adicionar = () => {
-    //     const body = {
-    //       name: "",
-    //       email: ""
-    //     }
-    //     axios.post(url, body, headers).then((res) => {
-    //         console.log(' Foi criado com sucesso')
-    //         // this.pessoas();
-    //     }).catch((err) => {
-    //       console.log('erro')
-    //     })
-    //   }
-    
     render(){
         return(
             <div>
