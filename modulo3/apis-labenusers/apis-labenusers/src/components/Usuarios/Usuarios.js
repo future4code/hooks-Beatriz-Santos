@@ -1,6 +1,23 @@
 import React from "react";
 import axios from "axios";
+import styled from 'styled-components'
 
+const DadosInput = styled.div`
+    width: 25%;
+    margin: 0 auto;
+    margin-top: 50px;
+    height: 150px;
+    padding-top: 25px;
+    text-align: center;
+    border: 1px solid black;
+`
+const Item = styled.div`
+    padding: 8px 0;
+`
+const Botao = styled.button`
+    padding: 5px 10px;
+    margin-top: 10px;
+`
 const url = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users";
 const headers = {
   headers: {
@@ -40,14 +57,17 @@ class Usuarios extends React.Component {
     }
     render(){
         return(
-            <div>
-                <h1>Usuarios</h1>
-                <label>Nome: </label>
-                <input placeholder={"Nome"} onChange={this.onChangeName} value={this.state.name}/><br/>
-                <label>Email: </label>
-                <input placeholder={"nome@exemplo.com"} onChange={this.onChangeEmail} value = {this.state.email}/><br/>
-                <button onClick={this.addUser}>Salvar</button>
-            </div>
+            <DadosInput>
+                <Item>
+                    <label>Nome: </label>
+                    <input placeholder={"Nome"} onChange={this.onChangeName} value={this.state.name}/><br/>
+                </Item>
+                <Item>
+                    <label>Email: </label>
+                    <input placeholder={"nome@exemplo.com"} onChange={this.onChangeEmail} value = {this.state.email}/><br/>
+                </Item>
+                <Botao onClick={this.addUser}>Salvar</Botao>
+            </DadosInput>
         )
     }
 }
