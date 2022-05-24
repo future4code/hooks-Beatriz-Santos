@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-let url = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users";
+const url = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users";
 const headers = {
   headers: {
     authorization: "beatriz-santos-hooks"
@@ -14,13 +14,25 @@ class Usuarios extends React.Component {
         email: ''
     }
 
-    changeName = (event) => {
+    onChangeName = (event) => {
         this.setState({name: event.target.value})
     }
-    changeEmail = (event) =>{
+    onChangeEmail = (event) =>{
         this.setState({email: event.target.value});
     }
     
+    addUser = () =>{
+        const body = {
+            name: this.state.name,
+            email: this.state.email
+        }
+
+        axios.post(url, body, headers).then((res) =>{
+            console.log("Usuario Criado");
+        }).catch((err) => {
+            console.log('erro')
+        })
+    }
     //   adicionar = () => {
     //     const body = {
     //       name: "",
@@ -39,10 +51,10 @@ class Usuarios extends React.Component {
             <div>
                 <h1>Usuarios</h1>
                 <label>Nome: </label>
-                <input placeholder={"Nome"} onChange={this.changeName} value={this.state.name}/><br/>
+                <input placeholder={"Nome"} onChange={this.onChangeName} value={this.state.name}/><br/>
                 <label>Email: </label>
-                <input placeholder={"Email"} onChange={this.changeEmail} value = {this.state.email}/><br/>
-                <button>Salvar</button>
+                <input placeholder={"nome@exemplo.com"} onChange={this.onChangeEmail} value = {this.state.email}/><br/>
+                <button onClick={this.addUser}>Salvar</button>
             </div>
         )
     }
