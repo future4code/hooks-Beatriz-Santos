@@ -26,9 +26,13 @@ class Usuarios extends React.Component {
     
     render(){
         return(
-            <>
+            <div>
                 <h1>Usuarios</h1>
-            </>
+                <label>Nome: </label>
+                <input/>
+                <label>Email: </label>
+                <input/>
+            </div>
         )
     }
 }

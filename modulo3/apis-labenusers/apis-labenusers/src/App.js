@@ -12,24 +12,29 @@ const headers = {
   
 class App extends React.Component {
   state = {
-    botao: false
+    botao: true
   }
   
   trocarPagina = () => {
-    this.setState({botao: !this.state.botao});
     if(this.state.botao){
-      <InserirDados/>
+     const paginaRenderizada = <InserirDados/> 
+     return paginaRenderizada;
     }
     else{
-      <Usuarios />
+      const paginaRenderizada = <Usuarios />
+      return paginaRenderizada;
     }
+  }
+
+  mudarValor = () => {
+    this.setState({botao: !this.state.botao});
   }
   
   render(){
     return (
       <div>
-        <button onClick={this.trocarPagina} value = {this.state.botao}>Trocar de Pagina</button>
-
+        <button value = {this.state.botao} onClick={this.mudarValor}> Trocar de Pagina </button>
+        {this.trocarPagina()}
       </div>
     );
   }
