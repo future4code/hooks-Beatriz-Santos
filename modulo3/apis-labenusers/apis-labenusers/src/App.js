@@ -7,7 +7,7 @@ import Usuarios from './components/Usuarios/Usuarios';
   
 class App extends React.Component {
   state = {
-    botao: false
+    botao: true
   }
   
   trocarPagina = () => {

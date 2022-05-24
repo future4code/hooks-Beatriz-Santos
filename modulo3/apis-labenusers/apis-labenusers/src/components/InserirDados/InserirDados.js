@@ -9,18 +9,28 @@ const headers = {
 }
 
 class InserirDados extends React.Component { 
+    state = {
+        pessoas: []
+    }
+    componentDidMount = () => {
+        this.pessoas()
+    }
     pessoas = () => {
         axios.get(url, headers).then((res) => {
-          console.log (res.data)
+          this.setState({pessoas: res.data})
         }).catch((err) =>{
           console.log('Algo deu errado');
         })
       }
+
     render(){
+        const listaPessoas = this.state.pessoas.map((pessoas, index) => {
+            return<p key={index}> {pessoas.name} </p>
+        })
         return(
             <>
                 <h1>Inserir Dados</h1>
-                <div>{this.pessoas()}</div>
+                <div>{listaPessoas}</div>
             </>
         )
     }
