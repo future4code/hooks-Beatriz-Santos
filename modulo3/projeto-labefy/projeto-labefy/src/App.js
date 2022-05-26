@@ -1,27 +1,40 @@
 import React from 'react';
-import CreatePlaylist from './components/CreatePlaylist/CreatePlaylist'
+import styled from 'styled-components'
 import AccessPlaylist from './components/AccessPlaylist/AccessPlaylist'
+import AddTrack from './components/AddTrack/AddTrack';
+
+const Pagina = styled.div`
+  margin: 0;
+  padding: 0;
+  height: 600px;
+  display: flex;
+`
+const Header = styled.div`
+  background-color: grey;
+  width: 20%;
+  height: 100%;
+  display: flex;
+`
 class App extends React.Component {
   state ={
-    pagina: 'create playlist'
+    pagina: 'access playlist',
+    playlist: ''
   }
 
-  onClickCreatePlaylist = () => {
-    this.setState({pagina: 'create playlist'})
-  }
   onClickAccessPlaylist = () => {
     this.setState({pagina: 'access playlist'})
   }
-  addTrack = () => {
-    console.log("vamos adicionar")
+  addTrack = (playlist) => {
+    this.setState({pagina: 'detalhe playlist'})
+    this.setState({playlist: playlist})
   }
   renderPage = () => {
     switch (this.state.pagina) {
-      case 'create playlist':
-        return <CreatePlaylist />
-      
       case 'access playlist':
-        return <AccessPlaylist />
+        return <AccessPlaylist addTrack={this.addTrack}/>
+
+      case 'detalhe playlist':
+        return <AddTrack detailPlaylist={this.state.playlist}/>
 
       default:
         return 'Pagina não encontada :('
@@ -30,13 +43,10 @@ class App extends React.Component {
 
   render(){
     return (
-      <div>
-        {/* <button onClick={this.onClickCreatePlaylist}>Criar Playlist</button>
-        <button onClick={this.onClickAccessPlaylist}>Acessar Playlist</button>
-        {this.renderPage()} */}
-        <CreatePlaylist />
-        <AccessPlaylist addTrack={this.addTrack}/>
-      </div>
+      <>
+          {this.renderPage()} 
+      </>
+      
     );
   }
 }

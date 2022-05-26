@@ -38,10 +38,29 @@ const headers = {
 }
 class AccessPlaylist extends React.Component {
     state = {
-        playlist: []
+        playlist: [],
+        playlistName: ''
     }
+    onChangeNamePlaylist = (event) => {
+        this.setState({playlistName: event.target.value})
+    }
+
     componentDidMount = () => {
         this.showPlaylist()
+    }
+
+    addPlaylist = () => {
+        const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists'
+        const body = {
+            name: this.state.playlistName
+        }
+        axios.post(url, body, headers).then((res) => {
+            alert('Playlist criada');
+            this.setState({playlistName: ''})
+            this.showPlaylist()
+        }).catch((err) =>{
+            console.log(err);
+        })
     }
     showPlaylist = () => {
         const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists'
@@ -66,7 +85,7 @@ class AccessPlaylist extends React.Component {
         const lista = this.state.playlist.map((playlist) => {
             return (
                 <Playlists key={playlist.id}>
-                    <NameImg onClick={this.props.addTrack}>
+                    <NameImg onClick={() => this.props.addTrack(playlist)}>
                         <FotoAlbum src={imgAlbum} />
                         <Name> {playlist.name} </Name>
                     </NameImg>
@@ -80,6 +99,9 @@ class AccessPlaylist extends React.Component {
             <>
                 <h1>PLAYLIST</h1>
                 {lista}
+                <input placeholder={'Nome da Playlist'} onChange={this.onChangeNamePlaylist} value={this.state.playlistName}/>
+                <button onClick={this.addPlaylist}> Adicionar </button>
+                <button onClick={this.props.criarPlaylist}>Acessar Playlist</button>
             </>
         );
     }
