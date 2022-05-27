@@ -4,16 +4,8 @@ import AccessPlaylist from './components/AccessPlaylist/AccessPlaylist'
 import AddTrack from './components/AddTrack/AddTrack';
 
 const Pagina = styled.div`
-  margin: 0;
-  padding: 0;
-  height: 600px;
-  display: flex;
-`
-const Header = styled.div`
-  background-color: grey;
-  width: 20%;
-  height: 100%;
-  display: flex;
+  margin: 0px;
+  padding: 0px;
 `
 class App extends React.Component {
   state ={
@@ -43,9 +35,9 @@ class App extends React.Component {
 
   render(){
     return (
-      <>
+      <Pagina>
           {this.renderPage()} 
-      </>
+      </Pagina>
       
     );
   }
