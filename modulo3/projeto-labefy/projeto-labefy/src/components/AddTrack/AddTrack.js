@@ -3,18 +3,15 @@ import React from 'react';
 import styled from 'styled-components'
 
 const Pagina = styled.div`
-    margin: 0px;
-    padding: 0px;
     height: 100%;
     display: flex;
 `
 const Dados = styled.div`
-    background-color: #f1b139;
+    background-color: #f9b95af7;
     width: 20%;
-    height: 100%;
-    margin: 8% 40px;
-    padding: 20px;
-    padding-bottom: 5%;
+    margin: 40px;
+    padding: 25px;
+    padding-bottom: 3%;
     border-radius: 5%;
     box-shadow: 2px 2px 10px black;
     text-align: center;
@@ -22,22 +19,63 @@ const Dados = styled.div`
 const Title = styled.h1`
     width: 97%;
     text-align:center;
+    font-family: Trebuchet MS;
+    margin-bottom: 5%;
+`
+const Label = styled.p`
+    font-size: 20px;
+    font-family: Andale Mono, monospace;
+    margin-top: 10%;
+`
+const Input = styled.input`
+    padding: 8px 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+`
+const Botao = styled.button`
+    width: 70%;
+    padding: 10px;
+    margin-top: 12%;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 5px 5px black;
+    cursor: pointer;
 `
 const ListaMusica = styled.div`
-    background-color: #f1b139;
+    background-color: #f9b95af7;
     margin-left: 5%;
     margin-top: 5%;
     padding-top: 2%;
     width: 60%;
+    height:100%;
     border-radius: 5%;
-    box-shadow: 2px 2px 10px black;`
-
+    box-shadow: 2px 2px 10px black;
+`
 const Musicas = styled.div`
-    padding: 2% 10%;
+    padding: 0% 10%;
+    padding-bottom: 5%;
 `
 const Musica = styled.div`
+    background-color: #fdaf3af7;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid black;
+    border-radius: 10px;
+    padding: 5px 15px;
+    align-items: center;
+    margin-top: 5%;
+`
+const Remover = styled.button`
+    background: none;
+    border: none;
+    font-size: 25px;
+    color: red;
+    cursor: pointer;
+`
+const NomeMusica = styled.span`
+    font-size: 20px;
+    font-weight: bold;
+    font-family:Andale Mono, monospace;
 `
 const headers = {
     headers:{
@@ -49,7 +87,8 @@ class AddTrack extends React.Component{
         tracks: [],
         trackName: '',
         artistName: '',
-        urlTrack: ''
+        urlTrack: '',
+        tocarMusica: true
     }
 
     onChangeNameTrack = (event) => {
@@ -102,19 +141,20 @@ class AddTrack extends React.Component{
             console.log(err)
         })
     }
-    tocarMusica = (url) => {
-        console.log('foi')
-        return url.play();
-    }
-    
-    
+
     render(){
         const music = this.state.tracks.map((music) => {
             return (
                  <Musica key={music.id}>
-                     <p>{music.name}</p>
-                     <audio src={music.url} controls></audio>
-                     <button onClick={() => this.deletePlaylistTrack(music.id)}>X</button>
+                     <div>
+                        <NomeMusica>{music.name}</NomeMusica>
+                     </div>
+                     <div>
+                        <audio src={music.url} controls ></audio>
+                     </div>
+                     <div>
+                        <Remover onClick={() => this.deletePlaylistTrack(music.id)}>X</Remover>
+                     </div>
                  </Musica> 
             ) 
          })
@@ -122,27 +162,32 @@ class AddTrack extends React.Component{
             <Pagina>
                 <Dados>
                     <Title>Adicionar música a playlist</Title>
+
                     <div>
-                        <label>Nome da música</label><br/>
-                        <input placeholder={'track name'}  onChange={this.onChangeNameTrack} value={this.state.trackName}/> 
+                        <Label>Nome da música</Label>
+                        <Input placeholder={'track name'}  onChange={this.onChangeNameTrack} value={this.state.trackName}/> 
                     </div>
+
                     <div>
-                        <label>Nome do artista</label><br/>
-                        <input placeholder={'artist name'} onChange={this.onChangeArtistName} value={this.state.artistName}/> 
+                        <Label>Nome do artista</Label>
+                        <Input placeholder={'artist name'} onChange={this.onChangeArtistName} value={this.state.artistName}/> 
                     </div>
+
                     <div>
-                        <label>Url da música</label><br/>
-                        <input placeholder={'url'} onChange={this.onChangeUrlTrack} value={this.state.urlTrack}/> 
+                        <Label>Url da música</Label>
+                        <Input placeholder={'url'} onChange={this.onChangeUrlTrack} value={this.state.urlTrack}/> 
                     </div>
-                    <button onClick={this.postPlaylistTrack}>Adicionar track</button>
+
+                    <Botao onClick={this.postPlaylistTrack}>Adicionar track</Botao>
+                    <Botao onClick={this.props.voltarPagina}>Voltar</Botao>
                 </Dados>
                 <ListaMusica>
-                    <h1>Muúsicas</h1>
-                    <h1>{this.props.detailPlaylist.name}</h1> 
+                    <Title>{this.props.detailPlaylist.name}</Title> 
                     <Musicas>
                         {music}
                     </Musicas>
                 </ListaMusica>
+                
             </Pagina>
         )
     }

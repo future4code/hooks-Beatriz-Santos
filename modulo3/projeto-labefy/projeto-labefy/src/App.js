@@ -26,7 +26,7 @@ class App extends React.Component {
         return <AccessPlaylist addTrack={this.addTrack}/>
 
       case 'detalhe playlist':
-        return <AddTrack detailPlaylist={this.state.playlist}/>
+        return <AddTrack detailPlaylist={this.state.playlist} voltarPagina={this.onClickAccessPlaylist}/>
 
       default:
         return 'Pagina não encontada :('

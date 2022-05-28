@@ -14,7 +14,7 @@ const Pagina = styled.div`
 //     width: 100%;
 // `
 const Criar = styled.div`
-    background-color: #f1b139;
+    background-color: #f9b95af7;
     width: 20%;
     height: 100%;
     margin: 8% 40px;
@@ -26,7 +26,7 @@ const Criar = styled.div`
 `
 const Label = styled.p`
     font-size: 20px;
-    margin-top: 25%;
+    margin-top: 15%;
 `
 const Input = styled.input`
     padding: 8px 10px;
@@ -44,9 +44,10 @@ const BotaoCriar = styled.button`
 `
 const Title = styled.h1`
     text-align: center;
+    font-family: Trebuchet MS;
 `
 const ListaPlaylist = styled.div`
-    background-color: #f1b139;
+    background-color: #f9b95af7;
     margin-left: 5%;
     margin-top: 5%;
     padding-top: 2%;
@@ -58,14 +59,14 @@ const Lista = styled.div`
     padding: 2% 10%;
 `
 const Playlists = styled.div`
+    background-color: #fdaf3af7;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid black;
+    border-radius: 10px;
+    padding: 2px 15px;
     align-items: center;
-    border: 1px solid black;
-    box-shadow: 2px 1px black;
-    border-radius: 5px;
-    margin: 15px;
-    height: 60px;
+    margin-top: 5%;
 `
 const FotoAlbum = styled.img`
     width: 50px;
@@ -75,6 +76,8 @@ const FotoAlbum = styled.img`
 const Name = styled.p `
     padding-left: 50px;
     font-size: 20px;
+    font-weight: bold;
+    font-family:Andale Mono, monospace;
 `
 const NameImg = styled.div`
     display:flex;
@@ -85,7 +88,11 @@ const Botao = styled.div`
     margin: 15px;
 `
 const Remover = styled.button`
-    width: 25px;
+    background: none;
+    border: none;
+    font-size: 25px;
+    color: red;
+    cursor: pointer;
 `
 
 const headers = {
