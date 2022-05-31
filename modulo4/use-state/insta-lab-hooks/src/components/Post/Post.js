@@ -38,7 +38,7 @@ const Post = (props) => {
   };
 
   const enviarComentario = (comentario) => {
-    const listaDeComentarios = [comentarios, comentario]
+    const listaDeComentarios = [...comentarios, comentario]
 
     setComentarios(listaDeComentarios);
     setComentado(false)
@@ -48,9 +48,9 @@ const Post = (props) => {
   const caixaDeComentario = comentado ?( 
     <SecaoComentario enviarComentario={enviarComentario} />):
     (
-      comentarios.map(comentario => {
+      comentarios.map((comentario, indice) => {
         return(
-          <CommentContainer>
+          <CommentContainer key={indice}>
             <p>{comentario}</p>
           </CommentContainer>
         )
