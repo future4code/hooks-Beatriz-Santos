@@ -1,0 +1,1 @@
+https://black-rule.surge.sh/
