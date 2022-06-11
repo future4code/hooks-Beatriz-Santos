@@ -9,7 +9,7 @@ const Pagina = styled.div`
 `
 
 export default function App() {
-    const [page, setPage] = useState('matchs')
+    const [page, setPage] = useState('perfil')
 
     const goToMatch = () => {
       setPage('matchs')
