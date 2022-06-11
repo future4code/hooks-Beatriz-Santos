@@ -1,66 +1,38 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Perfil from "./components/CardPerfil/Perfil";
+import React, { useState } from "react";
+import styled from 'styled-components'
 import Match from "./components/Match/Match";
+import Perfil from './components/CardPerfil/Perfil'
 
-const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/beatriz/person`;
+const Pagina = styled.div`
+  width: 100%;
+  height: 500px;
+`
 
 export default function App() {
-    const [usuario, setUsuario] = useState([])
-    const [match, setMatch] = useState([])
-    const [buttons, setButtons] = useState(0)
-    const [page, setPage] = useState('perfil')
+    const [page, setPage] = useState('matchs')
 
-    const renderizar = () => {
-      switch (page) {
-        case 'perfil':
-          return <Perfil dadosUsuario = {usuario} like={like} deslike={desLike} onChangePage={goToMatch}/> 
-        
-        case 'matchs':
-          return <Match pares={match} onChangePage={goToPerfil}/>
-          
-        default:
-          break;
-      }
-    }
     const goToMatch = () => {
       setPage('matchs')
     }
     const goToPerfil = () => {
       setPage('perfil')
     }
-    useEffect(() => {
-      axios.get(url).then((response)=>{
-        setUsuario(response.data.profile)
-      }).catch((err) => {
-        console.log(err)
-      })
-
-    }, [])
-    
-    const like = () => {
-      setButtons(buttons + 1)
-      const matchs = [...match, usuario]
-      setMatch(matchs)
+    const renderizar = () => {
+      switch (page) {
+        case 'perfil':
+          return <Perfil onChangePage={goToMatch}/> 
+        
+        case 'matchs':
+          return <Match  onChangePage={goToPerfil}/>
+          
+        default:
+          break;
+      }
     }
-  
-    const desLike = () =>{
-      setButtons(buttons + 1)
-    } 
-
-    useEffect(() => {
-      axios.get(url).then((response)=>{
-        setUsuario(response.data.profile)
-      }).catch((err) => {
-        console.log(err)
-      })
-
-    }, [buttons])
-
-
+    
   return (
-    <div >
+    <Pagina >
       {renderizar()}
-    </div>
+    </Pagina>
   );
 }
