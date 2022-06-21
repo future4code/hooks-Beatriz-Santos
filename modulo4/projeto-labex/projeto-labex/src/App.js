@@ -5,9 +5,9 @@ import { theme } from './theme/theme'
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Router />
-    </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <Router />
+      </ThemeProvider>
   );
 }
 

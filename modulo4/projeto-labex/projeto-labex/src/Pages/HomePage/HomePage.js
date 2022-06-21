@@ -13,22 +13,22 @@ const Apresentacao = styled.div`
 `
 const Title = styled.h1`
     margin: 0px;
-    padding: 4% 10%;
+    padding: 5% 13%;
     color: white;
 `
 const Texto = styled.span`
     color: white;
-    width: 20%;
+    width: 35%;
     font-size: 25px;
     text-align: center;
     margin-right: 10%;
     position: absolute;
-    margin-left: 68%;
+    margin-left: 60%;
 `
 const Botoes = styled.div`
     width: 15%;
     height: 180px;
-    margin-top: 13%;
+    margin-top: 15%;
     position: absolute;
     margin-left: 70%;
 `
@@ -44,18 +44,18 @@ export default function HomePage(){
     
     const navigate = useNavigate();
     const login = () => {
-        navigate('/LoginPage')
+        navigate('/login')
     }
     const listTrips = () => {
-        navigate('/ListTrips')
+        navigate('/trips/list')
     }
     return (
         <Pagina>
             <Title> LabeX - Viagens espaciais </Title>
             
             <Texto>
-                Confira as nossas viagens, escolha qual é mais a sua cara e inscrevá-se. 
-                <p>Venha conhecer o espaço conosco. </p>
+                <p>Com a LabeX você pode realizar o sonho de conhecer outros planetas e viajar pelo espaço. Veja todas as oportunidades de viagens e não perca essa chance, faça agora sua incrição e vamos juntos para essa aventura que será inesquecivel. Eaí, partiu !? </p>
+                <p>Let's explore the Universe</p>
             </Texto>
             <Botoes>
                 <Viagens>

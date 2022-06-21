@@ -8,7 +8,7 @@ export default function LoginPage(){
         navigate(-1)
     }
     const adminPage = () =>{
-        navigate('/AdminHome')
+        navigate('/admin/trips/list')
     }
     return (
         <>

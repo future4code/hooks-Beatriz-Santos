@@ -8,10 +8,10 @@ export default function AdminHomePage(){
         navigate(-1)
     }
     const logout = () => {
-        navigate('/LoginPage')
+        navigate('/login')
     }
     const createTrip = () => {
-        navigate('/CreateTrips')
+        navigate('/admin/trips/create')
     }
     return (
         <>
