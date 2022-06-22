@@ -3,12 +3,12 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import CardTrips from './CardTrips';
 import styled from 'styled-components';
+import { Button } from '@mui/material';
 
 const Pagina = styled.div`
-    margin: 0;
+    padding-top: 50px;
     width: 100%;
-    height: 800px;
-    display: flex;
+    height: 60vw;
     background-image: url('https://c.wallhere.com/photos/9e/f9/space_galaxy_universe_space_art_nebula_digital_art-229942.jpg!d');
     background-attachment: fixed;
     background-size: 100%;
@@ -17,10 +17,15 @@ const Title = styled.h1`
     margin:0;
     padding: 0;
     color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10%;
+    margin-left: 5%;
 `
 const Card = styled.div`
     display: grid;
-    grid-template-columns: 40% 40%;
+    grid-template-columns: 30% 30% 30%;
+    margin-top: 5%;
 `
 export default function ListTripsPage(){
     const [ trips, setTrips ] = useState([]);
@@ -49,7 +54,7 @@ export default function ListTripsPage(){
         <Pagina>
             <Title> 
                 Lista Viagens
-            <button onClick = { goBack }> Voltar </button>
+                <Button variant = "contained" color = {'secondary'} onClick = { goBack }> Voltar </Button>
             </Title>
             <Card>
                 { trip }

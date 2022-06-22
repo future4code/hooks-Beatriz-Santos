@@ -59,10 +59,10 @@ export default function HomePage(){
             </Texto>
             <Botoes>
                 <Viagens>
-                    <Button variant="contained" color='primary' onClick = { listTrips }> Ver viagens </Button>
+                    <Button variant="contained" color='secondary' onClick = { listTrips }> Ver viagens </Button>
                 </Viagens>
                 <Admin>
-                    <Button variant="contained" color='primary' onClick = { login }> Área administrativa </Button>
+                    <Button variant="contained" color='secondary' onClick = { login }> Área administrativa </Button>
                 </Admin>
             </Botoes>
             

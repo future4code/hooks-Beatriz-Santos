@@ -12,10 +12,11 @@ export default function Router(){
     return(
         <BrowserRouter>
             <Routes>
-                <Route  index   element   =   {<HomePage />}  />
+                {/* <Route  index   element   =   { <HomePage /> }  />     */}
+                <Route  index   element   =   { <AdminHomePage   /> }  />
                 <Route  path  =  { '/login' }  element   =   {  <LoginPage />  }   />
                 <Route  path  =  { '/trips/List' }  element   =   { <ListTripsPage   /> } />
-                <Route  path  =  { '/admin/trips/list' }  element    =  { <AdminHomePage   /> } />
+                {/* <Route  path  =  { '/admin/trips/list' }  element    =  { <AdminHomePage   /> } /> */}
                 <Route  path  =  { '/adimin/trips/:id' }  element    =  { <TripDetailsPage /> } />
                 <Route  path  =  { '/admin/trips/create' }  element  =  { <CreateTripPage  /> } />
                 <Route  path  =  { '/trips/application' }   element  =  { <ApplicationFormPage /> } />
