@@ -29,7 +29,7 @@ export default function LoginPage(){
             localStorage.setItem('id', response.data.user.id)
             navigate('/admin/trips/list')
         }).catch((err) => {
-            console.log(err.message)
+            alert('Verfique os dados para fazer o login')
         })
 
     }
