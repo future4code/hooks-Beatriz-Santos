@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 
 const Pagina = styled.div`
     background-image: url('https://bordalo.observador.pt/v2/q:85/rs:fill:770:433/c:770:433:nowe:0:0/plain/https://s3.observador.pt/wp-content/uploads/2017/04/20154606/exoplanets_770x433_acf_cropped.jpg');
-    height: 761px;
+    height: 900px;
     background-size: 100%;
 `
 const Apresentacao = styled.div`
