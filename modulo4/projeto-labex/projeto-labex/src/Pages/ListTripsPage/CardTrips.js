@@ -10,12 +10,11 @@ const Pagina = styled.div`
     height: 100%;
     justify-content: space-between;
     margin: 0 auto;
+    margin-bottom: 10%;
     `
 const Card = styled.div`
     border: 2px solid white;
-    background-color: rgba(58, 3, 58, 0.900);
-    margin-bottom: 0;
-    margin-top: 5%;
+    background-color: rgba(58, 3, 58, 0.810);
     padding: 0% 6%;
     border-radius: 5%;
     width: 100%;
