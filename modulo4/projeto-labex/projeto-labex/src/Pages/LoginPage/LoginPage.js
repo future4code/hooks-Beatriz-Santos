@@ -50,7 +50,10 @@ export default function LoginPage(){
     const onChangePassword = (event) => {
         setPassword(event.target.value)
     }
-    const onClickLogar = () => {
+    const onClickLogar = (event) => {
+       
+        event.preventDefault()
+
         const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/beatriz/login';
         const body = {
             email: email,
@@ -73,26 +76,28 @@ export default function LoginPage(){
                 </Header>
             <Inputs>
                     <h1>Login</h1>
-                <TextField
-                    required
-                    id = "outlined-required"
-                    label = "Email"
-                    sx={{ m: 4, width: '72ch' }}
-                    value = { email }
-                    onChange = { onChangeEmail }
-                />
-                <TextField
-                    required
-                    id = "outlined-required"
-                    label = "Senha"
-                    type = { 'password' }
-                    value = { password } 
-                    sx={{ m: 4, width: '72ch' }}
-                    onChange = { onChangePassword }
-                /> <br />
-                <Botao>
-                    <Button variant = { 'contained' } sx={{ m: 1, width: '30ch', height: '7ch'}}onClick = { onClickLogar }> Logar </Button>
-                </Botao>
+
+                <form onSubmit = { onClickLogar }>
+                    <TextField
+                        required
+                        id = "outlined-required"
+                        type = { 'email' }
+                        sx={{ m: 4, width: '72ch' }}
+                        value = { email }
+                        onChange = { onChangeEmail }
+                    />
+                    <TextField
+                        required
+                        id = "outlined-required"
+                        type = { 'password' }
+                        value = { password } 
+                        sx={{ m: 4, width: '72ch' }}
+                        onChange = { onChangePassword }
+                    /> <br />
+                    <Botao>
+                        <Button type = {'submit'} variant = { 'contained' } sx={{ m: 1, width: '30ch', height: '7ch'}}> Logar </Button>
+                    </Botao>
+                </form>
             </Inputs>
         </Pagina>
     )
