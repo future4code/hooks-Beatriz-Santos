@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import axios from 'axios'
 export default function ApplicationFormPage(){
+    const [paises, setPaises] = useState('')
+    const [list, setList] = useState([])
     const [form, setForm] = useState({
         name: '',
         age: '',
@@ -16,25 +18,38 @@ export default function ApplicationFormPage(){
     }
     const inscribe = (event) => {
         event.preventDefault()
-        if(form.age < 18) {
-            alert("A pessoa tem que ser maior de idade!!")
+        const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/beatriz/trips/${localStorage.getItem('idTrip')}/apply` 
+        const headers = {
+            headers:{
+                auth: localStorage.getItem('token')
+            }
         }
-        else{
-            console.log('eviado')
-            console.log(form)
+        const body = {
+            name: form.name,
+            age: form.age,
+            applicationText: form.applicationText,
+            profession: form.profession,
+            country: paises
         }
+        axios.post(url, body, headers).then((response) => {
+            alert('Inscrição enviada com sucesso :)')
+        }).catch((err) => {
+            console.log(err)
+        })
     }
+    useEffect(() => {
+        const url = 'https://servicodados.ibge.gov.br/api/v1/localidades/paises?orderBy=nome';
+        axios.get(url).then((response) => {
+            setList(response.data)
+        }).catch((err) => {
+            console.log(err)
+        })
+    }, [])
     return (
         <>
         <button onClick = { goBack }> Voltar </button>
             <h1>Aplicações</h1>
             <form onSubmit={ inscribe }>
-                <label>Viagens</label>
-                <select>
-                    <option>Viagem 1</option>
-                    <option>Viagem 2</option>
-                    <option>Viagem 3</option>
-                </select> <br/>
 
                 <label>Nome: </label>
                 <input
@@ -75,13 +90,17 @@ export default function ApplicationFormPage(){
                     value = { form.applicationText }
                     onChange = {(event) => setForm({...form, [event.target.name]: event.target.value})}
                 /> <br/>
-
-                <label>Paises</label>
-                <select>
-                    <option>Pais 1</option>
-                    <option>Pais 2</option>
-                    <option>Pais 3</option>
-                </select> <br/>
+                <select
+                    value = { paises }
+                    onChange = {event => setPaises(event.target.value)}
+                >
+                    <option >Selecione um país</option>
+                    {list.map((listPaises, index) => (
+                      <option value = { listPaises.nome} key={index}>
+                        {listPaises.nome}
+                      </option>
+                    ))}
+                </select>
 
                 <button > Enviar </button>
             </form>
