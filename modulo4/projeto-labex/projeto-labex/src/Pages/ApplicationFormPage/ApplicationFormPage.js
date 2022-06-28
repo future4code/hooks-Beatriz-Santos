@@ -3,7 +3,10 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components';
 import TextField from '@mui/material/TextField';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
+import InputLabel from '@mui/material/InputLabel';
 
 const Pagina = styled.div `
     width: 100%;
@@ -130,20 +133,21 @@ export default function ApplicationFormPage(){
                     value = { form.applicationText }
                     onChange = {(event) => setForm({...form, [event.target.name]: event.target.value})}
                 /> 
-                <TextField
+                <InputLabel id="demo-simple-select-label">País</InputLabel>
+                <Select
                     select
-                    label="País"
                     sx={{ m: 1, width: '60%', height: '10%'}} 
+                    variant="filled"
                     value = { paise }
                     onChange = {event => setPaise(event.target.value)}
                 >
-                    <option >Selecione um país</option>
+                    <MenuItem >Selecione um país</MenuItem>
                     { list.map((listPaises, index) => (
-                      <option value = { listPaises.nome } key={ index }>
+                      <MenuItem value = { listPaises.nome } key={ index }>
                         { listPaises.nome }
-                      </option>
+                      </MenuItem>
                     ))}
-                </TextField>
+                </Select>
                 <br/>
                 <Button variant = { 'contained' } sx={{ m: 1, width: '30%', height: '15%'}}> Enviar </Button>
             </form>

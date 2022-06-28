@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 import styled from 'styled-components';
 
 const Pagina = styled.div `
@@ -86,23 +88,23 @@ export default function CreateTripPage(){
                     onChange = { (event) => setForm({...form, [event.target.name]: event.target.value})} 
                 /> <br/>
 
-                <TextField 
+                <Select 
                     select
                     label="Planet"
                     sx={{ m: 1, width: '60%', height: '10%'}} 
                     value = { planet }
                     onChange = {(event) => setPlanet(event.target.value)}
                 >
-                    <option> Selecione um planeta </option>
-                    <option value = { 'Mercurio' }> Mercúrio </option>
-                    <option value = { 'Venus' }> Vênus </option>
-                    <option value = { 'Terra' }> Terra </option>
-                    <option value = { 'Marte' }> Marte </option>
-                    <option value = { 'Jupiter' }> Júpiter </option>
-                    <option value = { 'Saturno' }> Saturno </option>
-                    <option value = { 'Urano' }> Urano </option>
-                    <option value = { 'Netuno' }> Netuno </option>
-                </TextField> 
+                    <MenuItem> Selecione um planeta </MenuItem>
+                    <MenuItem value = { 'Mercurio' }> Mercúrio </MenuItem>
+                    <MenuItem value = { 'Venus' }> Vênus </MenuItem>
+                    <MenuItem value = { 'Terra' }> Terra </MenuItem>
+                    <MenuItem value = { 'Marte' }> Marte </MenuItem>
+                    <MenuItem value = { 'Jupiter' }> Júpiter </MenuItem>
+                    <MenuItem value = { 'Saturno' }> Saturno </MenuItem>
+                    <MenuItem value = { 'Urano' }> Urano </MenuItem>
+                    <MenuItem value = { 'Netuno' }> Netuno </MenuItem>
+                </Select> 
 
                 <TextField 
                     type = { 'date' } 
