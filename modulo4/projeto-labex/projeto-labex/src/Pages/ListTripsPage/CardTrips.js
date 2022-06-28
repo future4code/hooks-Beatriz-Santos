@@ -27,8 +27,9 @@ const CardActions = styled.div`
 export default function CardTrips(props){
     const navigate = useNavigate();
 
-    const inscrever = (idTrip) => {
+    const inscrever = (idTrip, nameTrip) => {
         localStorage.setItem('idTrip', idTrip)
+        localStorage.setItem('nameTrip', nameTrip)
         navigate('/trips/application');
     }
 
@@ -52,7 +53,7 @@ export default function CardTrips(props){
         </CardContent>
 
         <CardActions>
-              <Button variant="contained" color={'primary'} onClick = {() => inscrever(props.value.id) }> Inscrever </Button>
+              <Button variant="contained" color={'primary'} onClick = {() => inscrever(props.value.id, props.value.planet) }> Inscrever </Button>
         </CardActions>
     </Card>
     </Pagina>

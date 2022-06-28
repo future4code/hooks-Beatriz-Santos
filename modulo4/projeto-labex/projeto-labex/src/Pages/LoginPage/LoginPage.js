@@ -15,7 +15,7 @@ const Pagina = styled.div`
 `
 const Inputs = styled.div `
     margin: 0 auto;
-    margin-top: 5%;
+    margin-top: 1%;
     padding-left: 7%;
     padding-top: 3%;
     width: 50%;
@@ -72,7 +72,14 @@ export default function LoginPage(){
     return (
         <Pagina>
                 <Header>
-                    <Button variant = { 'contained' } color = { 'secondary' } onClick = { goBack }> Voltar </Button>
+                    <Button 
+                        variant = { 'contained' } 
+                        color = { 'secondary' } 
+                        onClick = { goBack }
+                        sx={{ m: 4, width: '7%' }}
+                    > 
+                            Voltar 
+                    </Button>
                 </Header>
             <Inputs>
                     <h1>Login</h1>
@@ -82,7 +89,7 @@ export default function LoginPage(){
                         required
                         id = "outlined-required"
                         type = { 'email' }
-                        sx={{ m: 4, width: '72ch' }}
+                        sx={{ m: 4, width: '72%' }}
                         value = { email }
                         onChange = { onChangeEmail }
                     />
@@ -91,11 +98,11 @@ export default function LoginPage(){
                         id = "outlined-required"
                         type = { 'password' }
                         value = { password } 
-                        sx={{ m: 4, width: '72ch' }}
+                        sx={{ m: 4, width: '72%' }}
                         onChange = { onChangePassword }
                     /> <br />
                     <Botao>
-                        <Button type = {'submit'} variant = { 'contained' } sx={{ m: 1, width: '30ch', height: '7ch'}}> Logar </Button>
+                        <Button type = {'submit'} variant = { 'contained' } sx={{ m: 1, width: '35%', height: '10%'}}> Logar </Button>
                     </Botao>
                 </form>
             </Inputs>

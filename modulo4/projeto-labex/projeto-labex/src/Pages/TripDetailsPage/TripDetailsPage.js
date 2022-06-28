@@ -42,7 +42,8 @@ export default function TripDetailsPage(){
             console.log(err)
         })
         if(decide) {
-            setAprovados([...aprovados, nameCandi])
+            const aproved = [...aprovados, nameCandi]
+            setAprovados(aproved)
         }
     }
     console.log(aprovados)
@@ -61,10 +62,9 @@ export default function TripDetailsPage(){
             <h1>Detalhes</h1>
             <CardDetailsTrip detail = {details} />
             <h4> aprovados </h4>
-
             { aprovados }
             <h4> Em avaliação </h4>
-            {candidate}
+            { candidate }
             <button onClick = {() => navigate(-1)}>Voltar</button>
         </>
     )

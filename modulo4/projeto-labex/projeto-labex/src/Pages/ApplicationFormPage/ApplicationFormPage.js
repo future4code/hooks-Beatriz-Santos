@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 export default function ApplicationFormPage(){
-    const [paises, setPaises] = useState('')
+    const [paise, setPaise] = useState('')
     const [list, setList] = useState([])
     const [form, setForm] = useState({
         name: '',
@@ -29,7 +29,7 @@ export default function ApplicationFormPage(){
             age: form.age,
             applicationText: form.applicationText,
             profession: form.profession,
-            country: paises
+            country: paise
         }
         axios.post(url, body, headers).then((response) => {
             alert('Inscrição enviada com sucesso :)')
@@ -49,6 +49,7 @@ export default function ApplicationFormPage(){
         <>
         <button onClick = { goBack }> Voltar </button>
             <h1>Aplicações</h1>
+            <h1>{localStorage.getItem('nameTrip')}</h1>
             <form onSubmit={ inscribe }>
 
                 <label>Nome: </label>
@@ -91,13 +92,13 @@ export default function ApplicationFormPage(){
                     onChange = {(event) => setForm({...form, [event.target.name]: event.target.value})}
                 /> <br/>
                 <select
-                    value = { paises }
-                    onChange = {event => setPaises(event.target.value)}
+                    value = { paise }
+                    onChange = {event => setPaise(event.target.value)}
                 >
                     <option >Selecione um país</option>
-                    {list.map((listPaises, index) => (
-                      <option value = { listPaises.nome} key={index}>
-                        {listPaises.nome}
+                    { list.map((listPaises, index) => (
+                      <option value = { listPaises.nome } key={ index }>
+                        { listPaises.nome }
                       </option>
                     ))}
                 </select>
