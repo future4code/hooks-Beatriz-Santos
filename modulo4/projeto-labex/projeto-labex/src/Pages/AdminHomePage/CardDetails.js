@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import { Button } from '@mui/material';
+import axios from 'axios';
 
 const Pagina = styled.div`
     display: flex;
@@ -27,18 +28,30 @@ const Name = styled.div`
     font-size: 1.3em;
 `
 const Planet = styled.div`
-    width: 30%;
+    width: 80%;
     font-size: 1.3em;
 `
 export default function CardDetails(props) {
     const navigate = useNavigate()
-
+    let count = 0;
     const detailTrip = (idTrip) => {
         localStorage.setItem('idDetailTrip', idTrip)
         navigate(`/adimin/trips/${localStorage.getItem('id')}`)
     }
-    const deleteTrip = () => {
-        console.log('deletou')
+
+    const deleteTrip = (idTrip) => {
+        const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/beatriz/trips/${idTrip}`
+        const headers = {
+            headers: {
+                auth: localStorage.getItem('token')
+            }
+        }
+        axios.delete(url, headers).then((response) => {
+            console.log(response)
+        }).catch((err) => {
+            console.log(err)
+        })
+        alert('Viagem excluida com sucesso')
     }
     return (
         <Pagina>
@@ -49,11 +62,10 @@ export default function CardDetails(props) {
                 <Planet>
                     <Text> { props.trips.planet } </Text>
                 </Planet>
-        
-                <IconButton aria-label={ "delete" } color = { 'primary' } onClick = { deleteTrip }>
+            </Card>
+                <IconButton aria-label={ "delete" } color = { 'primary' } onClick = {() => deleteTrip(props.trips.id) }>
                   <DeleteIcon />
                 </IconButton>
-            </Card>
         </Pagina>
     )
 }

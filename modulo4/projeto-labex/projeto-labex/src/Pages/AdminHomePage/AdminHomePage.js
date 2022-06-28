@@ -9,6 +9,7 @@ const Pagina = styled.div`
     background: url('https://c.wallhere.com/photos/9e/f9/space_galaxy_universe_space_art_nebula_digital_art-229942.jpg!d') no-repeat center fixed;
     background-size: cover;
     background-blend-mode: darken;
+    height: 100vh;
 `
 const Header = styled.div`
     display: flex;
@@ -43,6 +44,9 @@ const Trips = styled.div `
     background-color: rgba(58, 3, 58, 0.900);
     border: 2px solid purple;
     border-radius: 20px;
+    `
+const Trip = styled.div`
+    cursor: pointer;
 `
 export default function AdminHomePage(){
     const [trips, setTrips] = useState([])
@@ -90,7 +94,9 @@ export default function AdminHomePage(){
                     <hr/>
                     <p>Planeta </p>
                 </Categorias>
-                { trip }
+                <Trip>
+                    { trip }
+                </Trip>
             </Trips>
             <div>
                 footer

@@ -54,14 +54,14 @@ export default function CreateTripPage(){
                     onChange = {(event) => setPlanet(event.target.value)}
                 >
                     <option> Selecione um planeta </option>
-                    <option value = { 'mercurio' }> Mercúrio </option>
-                    <option value = { 'venus' }> Vênus </option>
-                    <option value = { 'terra' }> Terra </option>
-                    <option value = { 'marte' }> Marte </option>
-                    <option value = { 'jupiter' }> Júpiter </option>
-                    <option value = { 'saturno' }> Saturno </option>
-                    <option value = { 'urano' }> Urano </option>
-                    <option value = { 'netuno' }> Netuno </option>
+                    <option value = { 'Mercurio' }> Mercúrio </option>
+                    <option value = { 'Venus' }> Vênus </option>
+                    <option value = { 'Terra' }> Terra </option>
+                    <option value = { 'Marte' }> Marte </option>
+                    <option value = { 'Jupiter' }> Júpiter </option>
+                    <option value = { 'Saturno' }> Saturno </option>
+                    <option value = { 'Urano' }> Urano </option>
+                    <option value = { 'Netuno' }> Netuno </option>
                 </select>
 
                 <input 
