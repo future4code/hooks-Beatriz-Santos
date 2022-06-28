@@ -1,7 +1,39 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import styled from 'styled-components';
 
+const Pagina = styled.div `
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://c.wallhere.com/photos/9e/f9/space_galaxy_universe_space_art_nebula_digital_art-229942.jpg!d');
+    background-attachment: fixed;
+    background-size: 100%;
+    color: white;
+`
+const Header = styled.div`
+    padding: 3% 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
+const Title = styled.h1`
+    margin: 0;
+    
+`
+const DataTrip = styled.div`
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 1%;
+    padding-top: 3%;
+    width: 50%;
+    height: 60%;
+    border-radius: 25px;
+    border: 1px solid white;
+    background-color: rgba(58, 3, 58, 0.950);
+`
 export default function CreateTripPage(){
     const [planet, setPlanet] = useState('')
     const [form, setForm] = useState({
@@ -39,17 +71,25 @@ export default function CreateTripPage(){
     }
 
     return (
-        <>
-            <h1>Criar Viagem</h1>
+        <Pagina>
+            <Header>
+                <Title>Criar Viagem</Title>
+                <Button variant = { 'contained' } sx={{ m: 1, width: '15%', height: '15%'}} onClick = { goBack }> Voltar </Button>
+            </Header>
             <form onSubmit={ createTrip }>
-                <input 
-                    placeholder = { 'Nome' } 
+                <DataTrip>
+                <TextField
+                    placeholder = { 'Nome' }
+                    sx={{ m: 1, width: '60%', height: '10%'}} 
                     name = { 'name' } 
                     value = { form.name } 
                     onChange = { (event) => setForm({...form, [event.target.name]: event.target.value})} 
-                />
+                /> <br/>
 
-                <select 
+                <TextField 
+                    select
+                    label="Planet"
+                    sx={{ m: 1, width: '60%', height: '10%'}} 
                     value = { planet }
                     onChange = {(event) => setPlanet(event.target.value)}
                 >
@@ -62,33 +102,36 @@ export default function CreateTripPage(){
                     <option value = { 'Saturno' }> Saturno </option>
                     <option value = { 'Urano' }> Urano </option>
                     <option value = { 'Netuno' }> Netuno </option>
-                </select>
+                </TextField> 
 
-                <input 
+                <TextField 
                     type = { 'date' } 
                     placeholder = { 'data' } 
                     name = { 'date' }
                     value = { form.date }
+                    sx={{ m: 1, width: '60%', height: '10%'}}
                     onChange = {(event) => setForm({...form, [event.target.name]: event.target.value})}
                 />
 
-                <input 
+                <TextField 
                     type = { 'text' } 
                     placeholder = { 'descrição' } 
+                    sx={{ m: 1, width: '60%', height: '10%'}} 
                     name = { 'description' }
                     value = { form.description }
                     onChange = {(event) => setForm({...form, [event.target.name]: event.target.value})}
                 />
-                <input 
+                <TextField 
                     type = { 'number' } 
+                    sx={{ m: 1, width: '60%', height: '10%'}} 
                     placeholder = { 'Duração' } 
                     name = { 'durationInDays' }
                     value = { form.durationInDays }
                     onChange = {(event) => setForm({...form, [event.target.name]: event.target.value})}
-                />
-            <button> Criar </button>
+                /><br/>
+                    <Button  variant = { 'contained' } sx={{ m: 1, width: '35%', height: '10%'}}> Criar </Button>
+                </DataTrip>
             </form>
-            <button onClick = { goBack }> Voltar </button>
-        </>
+        </Pagina>
     )
 }

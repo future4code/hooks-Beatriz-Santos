@@ -1,6 +1,39 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import styled from 'styled-components';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+
+const Pagina = styled.div `
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://c.wallhere.com/photos/9e/f9/space_galaxy_universe_space_art_nebula_digital_art-229942.jpg!d');
+    background-attachment: fixed;
+    background-size: 100%;
+    color: white;
+`
+const Header = styled.div`
+    padding: 3% 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
+const Title = styled.h1`
+    margin: 0;
+    font-size: 50px;
+`
+const Form = styled.div`
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 1%;
+    padding-top: 3%;
+    width: 50%;
+    height: 60%;
+    border-radius: 25px;
+    border: 1px solid white;
+    background-color: rgba(58, 3, 58, 0.950);
+`
 export default function ApplicationFormPage(){
     const [paise, setPaise] = useState('')
     const [list, setList] = useState([])
@@ -46,52 +79,61 @@ export default function ApplicationFormPage(){
         })
     }, [])
     return (
-        <>
-        <button onClick = { goBack }> Voltar </button>
-            <h1>Aplicações</h1>
-            <h1>{localStorage.getItem('nameTrip')}</h1>
+        <Pagina>
+            <Header>
+                <Title>{localStorage.getItem('nameTrip')}</Title>
+                <Button variant = { 'contained' } sx={{ m: 1, width: '15%', height: '15%'}} onClick = { goBack }> Voltar </Button>
+            </Header>
+            <Form>
             <form onSubmit={ inscribe }>
 
-                <label>Nome: </label>
-                <input
+                <TextField
                     required
                     type = { 'text' }
+                    placeholder={'Nome'}
+                    sx={{ m: 1, width: '60%', height: '10%'}} 
                     name = 'name'
                     value = { form.name }
-                    pattern = { "^.{3,}" }
+                    inputProps={{ pattern: "^.{3,}" }}
                     title = { 'O nome deve ter mais que 3 caracteres' }
                     onChange = {(event) => setForm({...form, [event.target.name]: event.target.value})}
-                /> <br/>
+                /> 
 
-                <label>Idade: </label>
-                <input 
+                <TextField 
                     required
+                    placeholder={'Idade'}
                     type = { 'number' }
+                    sx={{ m: 1, width: '60%', height: '10%'}} 
                     name = { 'age' }
                     value = { form.age }
                     onChange = {(event) => setForm({...form, [event.target.name]: event.target.value})}
-                /> <br/>
+                /> 
 
-                <label>Profissão: </label>
-                <input 
+                <TextField 
                     required
                     type = { 'text' }
+                    placeholder={'Profissão'}
+                    sx={{ m: 1, width: '60%', height: '10%'}} 
                     name = { 'profession' }
-                    pattern = { "^.{10,}" }
+                    inputProps={{ pattern: "^.{10,}" }}
                     value = { form.profession }
                     onChange = {(event) => setForm({...form, [event.target.name]: event.target.value})}
-                /> <br/>
+                /> 
 
-                <label>Texto de apresentação: </label>
-                <input 
+                <TextField 
                     required
                     type = { 'text' }
+                    placeholder={'Texto Apresentação'}
+                    sx={{ m: 1, width: '60%', height: '10%'}} 
                     name = { 'applicationText' }
-                    pattern = { "^.{30,}" }
+                    inputProps={{ pattern: "^.{30,}" }}
                     value = { form.applicationText }
                     onChange = {(event) => setForm({...form, [event.target.name]: event.target.value})}
-                /> <br/>
-                <select
+                /> 
+                <TextField
+                    select
+                    label="País"
+                    sx={{ m: 1, width: '60%', height: '10%'}} 
                     value = { paise }
                     onChange = {event => setPaise(event.target.value)}
                 >
@@ -101,10 +143,11 @@ export default function ApplicationFormPage(){
                         { listPaises.nome }
                       </option>
                     ))}
-                </select>
-
-                <button > Enviar </button>
+                </TextField>
+                <br/>
+                <Button variant = { 'contained' } sx={{ m: 1, width: '30%', height: '15%'}}> Enviar </Button>
             </form>
-        </>
+            </Form>
+        </Pagina>
     )
 }
