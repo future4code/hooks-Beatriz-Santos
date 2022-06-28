@@ -149,7 +149,7 @@ export default function ApplicationFormPage(){
                     ))}
                 </Select>
                 <br/>
-                <Button variant = { 'contained' } sx={{ m: 1, width: '30%', height: '15%'}}> Enviar </Button>
+                <Button type={'submit'} variant = { 'contained' } sx={{ m: 1, width: '30%', height: '15%'}}> Enviar </Button>
             </form>
             </Form>
         </Pagina>

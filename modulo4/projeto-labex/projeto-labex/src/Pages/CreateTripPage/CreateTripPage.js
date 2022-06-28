@@ -131,7 +131,7 @@ export default function CreateTripPage(){
                     value = { form.durationInDays }
                     onChange = {(event) => setForm({...form, [event.target.name]: event.target.value})}
                 /><br/>
-                    <Button  variant = { 'contained' } sx={{ m: 1, width: '35%', height: '10%'}}> Criar </Button>
+                    <Button type={'submit'} variant = { 'contained' } sx={{ m: 1, width: '35%', height: '10%'}}> Criar </Button>
                 </DataTrip>
             </form>
         </Pagina>
