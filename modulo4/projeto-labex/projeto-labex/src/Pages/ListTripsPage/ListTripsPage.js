@@ -8,10 +8,10 @@ import { Button } from '@mui/material';
 const Pagina = styled.div`
     padding-top: 50px;
     width: 100%;
-    height: 60vw;
-    background-image: url('https://c.wallhere.com/photos/9e/f9/space_galaxy_universe_space_art_nebula_digital_art-229942.jpg!d');
-    background-attachment: fixed;
-    background-size: 100%;
+    background: url('https://c.wallhere.com/photos/9e/f9/space_galaxy_universe_space_art_nebula_digital_art-229942.jpg!d') no-repeat center fixed;
+    background-size: cover;
+    background-blend-mode: darken;
+    height: 100vh;
 `
 const Title = styled.h1`
     margin:0;
@@ -54,7 +54,7 @@ export default function ListTripsPage(){
         <Pagina>
             <Title> 
                 Lista Viagens
-                <Button variant = "contained" color = {'secondary'} onClick = { goBack }> Voltar </Button>
+                <Button variant = "contained" color = { 'secondary' } onClick = { goBack }> Voltar </Button>
             </Title>
             <Card>
                 { trip }

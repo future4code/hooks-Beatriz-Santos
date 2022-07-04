@@ -4,32 +4,28 @@ import { useNavigate } from 'react-router-dom'
 import Button from '@mui/material/Button';
 
 const Pagina = styled.div`
-    background-image: url('https://bordalo.observador.pt/v2/q:85/rs:fill:770:433/c:770:433:nowe:0:0/plain/https://s3.observador.pt/wp-content/uploads/2017/04/20154606/exoplanets_770x433_acf_cropped.jpg');
-    height: 900px;
-    background-size: 100%;
-`
-const Apresentacao = styled.div`
-    border: 1px solid white;
+    background: url('https://bordalo.observador.pt/v2/q:85/rs:fill:770:433/c:770:433:nowe:0:0/plain/https://s3.observador.pt/wp-content/uploads/2017/04/20154606/exoplanets_770x433_acf_cropped.jpg') ;
+    background-size: cover;
+    background-blend-mode: darken;
+    height: 100vh;
 `
 const Title = styled.h1`
     margin: 0px;
     padding: 5% 13%;
     color: white;
 `
-const Texto = styled.span`
+const Texto = styled.div`
     color: white;
     width: 35%;
     font-size: 25px;
     text-align: center;
     margin-right: 10%;
-    position: absolute;
     margin-left: 60%;
 `
 const Botoes = styled.div`
     width: 15%;
-    height: 180px;
-    margin-top: 15%;
-    position: absolute;
+    /* height: 180px; */
+    margin-top: 5%;
     margin-left: 70%;
 `
 const Viagens = styled.div`

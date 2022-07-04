@@ -10,12 +10,11 @@ const Pagina = styled.div`
     height: 100%;
     justify-content: space-between;
     margin: 0 auto;
+    margin-bottom: 10%;
     `
 const Card = styled.div`
     border: 2px solid white;
-    background-color: rgba(58, 3, 58, 0.900);
-    margin-bottom: 0;
-    margin-top: 5%;
+    background-color: rgba(58, 3, 58, 0.810);
     padding: 0% 6%;
     border-radius: 5%;
     width: 100%;
@@ -28,7 +27,9 @@ const CardActions = styled.div`
 export default function CardTrips(props){
     const navigate = useNavigate();
 
-    const inscrever = () => {
+    const inscrever = (idTrip, nameTrip) => {
+        localStorage.setItem('idTrip', idTrip)
+        localStorage.setItem('nameTrip', nameTrip)
         navigate('/trips/application');
     }
 
@@ -52,7 +53,7 @@ export default function CardTrips(props){
         </CardContent>
 
         <CardActions>
-              <Button variant="contained" color={'primary'} onClick = { inscrever }> Inscrever </Button>
+              <Button variant="contained" color={'primary'} onClick = {() => inscrever(props.value.id, props.value.planet) }> Inscrever </Button>
         </CardActions>
     </Card>
     </Pagina>
