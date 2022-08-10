@@ -1,0 +1,13 @@
+{
+  "name": "node-package-json",
+  "version": "1.0.0",
+  "description": "Exercicios Node e package.json ",
+  "main": "exercicio01.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node exercicio01.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
