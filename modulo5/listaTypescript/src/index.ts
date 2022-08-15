@@ -90,4 +90,37 @@ const emailAdmin = usuarioAdmin.map((admin) => {
 })
 console.log(emailAdmin)
 
-console.log("================== EXERCICIO 05 ==================")
+console.log("================== EXERCICIO 06 ==================")
+
+type cliente = {
+    cliente: string,
+    saldoTotal: number,
+    debitos: Array<number>
+}
+
+const clientes: Array<cliente> = [
+	{ cliente: "João", saldoTotal: 1000, debitos: [100, 200, 300] },
+	{ cliente: "Paula", saldoTotal: 7500, debitos: [200, 1040] },
+	{ cliente: "Pedro", saldoTotal: 10000, debitos: [5140, 6100, 100, 2000] },
+	{ cliente: "Luciano", saldoTotal: 100, debitos: [100, 200, 1700] },
+	{ cliente: "Artur", saldoTotal: 1800, debitos: [200, 300] },
+	{ cliente: "Soter", saldoTotal: 1200, debitos: [0] }
+]
+const debitos = clientes.map((cliente) => {
+    const debito = cliente.debitos.reduce((soma, i)  => {
+        return soma + i
+    })
+    const valorAtulizado = cliente.saldoTotal - debito
+
+    if(valorAtulizado < 0){
+        return cliente
+    }
+    else{
+        return false
+    }
+})
+const devedores = debitos.filter((devedor) => {
+    return devedor !== false
+})
+
+console.log(devedores)
