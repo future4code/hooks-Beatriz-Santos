@@ -1,0 +1,51 @@
+console.log("================== EXERCICIO 01 ==================");
+const nome = 'Beatriz';
+const dtNascimento = '25/01/2000';
+let mes;
+console.log(`Olá me chamo ${nome}, nasci no dia ${dtNascimento.substring(0, 2)} do mês ${dtNascimento.substring(3, 5)} do ano de ${dtNascimento.substring(6)}`);
+console.log("================== EXERCICIO 02 ==================");
+const str = 'Beatriz';
+const num = 21;
+const arr = ['João', 'Heloísa', 'Nathalia'];
+const showType = (value) => {
+    console.log(typeof value);
+};
+showType(str);
+showType(num);
+showType(arr);
+console.log("================== EXERCICIO 03 ==================");
+var GENERO;
+(function (GENERO) {
+    GENERO["ACAO"] = "A\u00E7\u00E3o";
+    GENERO["DRAMA"] = "Drama";
+    GENERO["Terror"] = "Terror";
+    GENERO["COMEDIA"] = "Comedia";
+    GENERO["ROMANCE"] = "Romance";
+})(GENERO || (GENERO = {}));
+const filmes = [
+    { nome: 'Duna', anoLancamento: 2021, generoFilme: GENERO.ACAO, pontuacao: 74 },
+    { nome: 'Era do gelo', anoLancamento: 2016, generoFilme: GENERO.COMEDIA },
+    { nome: 'Como eu era antes de você', anoLancamento: 2016, generoFilme: GENERO.ROMANCE, pontuacao: 100 }
+];
+console.log(filmes);
+console.log("================== EXERCICIO 04 ==================");
+var SETOR;
+(function (SETOR) {
+    SETOR["FINANCEIRO"] = "Financeiro";
+    SETOR["MARKETING"] = "Marketing";
+    SETOR["VENDAS"] = "Vendas";
+})(SETOR || (SETOR = {}));
+const colaboradores = [
+    { nome: "Marcos", salario: 2500, setor: SETOR.MARKETING, presencial: true },
+    { nome: "Maria", salario: 1500, setor: SETOR.VENDAS, presencial: false },
+    { nome: "Salete", salario: 2200, setor: SETOR.FINANCEIRO, presencial: true },
+    { nome: "João", salario: 2800, setor: SETOR.MARKETING, presencial: false },
+    { nome: "Josué", salario: 5500, setor: SETOR.FINANCEIRO, presencial: true },
+    { nome: "Natalia", salario: 4700, setor: SETOR.VENDAS, presencial: true },
+    { nome: "Paola", salario: 3500, setor: SETOR.MARKETING, presencial: true }
+];
+const pessoaMarketing = colaboradores.filter((colaborador) => {
+    return colaborador.setor === 'Marketing' && colaborador.presencial === true;
+});
+console.log(pessoaMarketing);
+//# sourceMappingURL=index.js.map
