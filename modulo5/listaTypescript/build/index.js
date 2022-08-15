@@ -48,4 +48,20 @@ const pessoaMarketing = colaboradores.filter((colaborador) => {
     return colaborador.setor === 'Marketing' && colaborador.presencial === true;
 });
 console.log(pessoaMarketing);
+console.log("================== EXERCICIO 05 ==================");
+const usuarios = [
+    { nome: "Rogério", email: "roger@email.com", role: "user" },
+    { nome: "Ademir", email: "ademir@email.com", role: "admin" },
+    { nome: "Aline", email: "aline@email.com", role: "user" },
+    { nome: "Jéssica", email: "jessica@email.com", role: "user" },
+    { nome: "Adilson", email: "adilson@email.com", role: "user" },
+    { nome: "Carina", email: "carina@email.com", role: "admin" }
+];
+const usuarioAdmin = usuarios.filter((usuario) => {
+    return usuario.role === 'admin';
+});
+const emailAdmin = usuarioAdmin.map((admin) => {
+    return admin.email;
+});
+console.log(emailAdmin);
 //# sourceMappingURL=index.js.map
