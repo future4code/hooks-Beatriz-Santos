@@ -27,6 +27,14 @@ app.post('/create/product', (req: Request, res: Response) => {
             statusCode = 422
             throw new Error('check properties')
         }
+        if(typeof name !== 'string' || typeof price !== 'number'){
+            statusCode = 422;
+            throw new Error('Incompatible types. name = string e price = number')
+        }
+        if(price <= 0){
+            statusCode = 422;
+            throw new Error('Invalid product value')
+        }
         const id: string = Math.floor(Date.now() * Math.random()).toString(36)
         newProduct.push({id, name, price})
 
