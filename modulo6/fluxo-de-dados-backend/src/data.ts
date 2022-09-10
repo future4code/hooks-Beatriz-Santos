@@ -4,7 +4,7 @@ type item = {
     price: number
 }
 
-export const produto: Array<item> = [
+export const product: Array<item> = [
     {
         id: '10',
         name: 'Calça',
