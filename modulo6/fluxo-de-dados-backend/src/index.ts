@@ -51,7 +51,44 @@ app.get('/products', (req: Request, res: Response) => {
         }
         res.status(200).send(products)
     }
+    catch(error: any){
+        res.status(statusCode).send(error.message)
+    }
+})
+app.put('/edit/price/:id', (req: Request, res: Response) => {
+    const authorization = req.headers.authorization;
+    const idItem = req.params.id
+    let statusCode = 400
 
+    try{
+        if(!authorization){
+            statusCode = 401;
+            throw new Error("Authorization not found")
+        }
+        if(!idItem){
+            statusCode = 404;
+            throw new Error('Id not found or incorrect')
+        }
+        let item = newProduct.find((product) => {
+            return product.id === idItem
+        })
+
+        if(!item){
+            statusCode = 404;
+            throw new Error('Id not found or incorrect')
+        }
+        let updateProduct = newProduct.filter((product) => {
+            return product.id !== idItem
+        })
+        updateProduct = [
+            ...updateProduct,
+            {
+                ...item,
+                price: 57.98
+            }
+        ]
+        res.send(updateProduct)
+    }
     catch(error: any){
         res.status(statusCode).send(error.message)
     }
