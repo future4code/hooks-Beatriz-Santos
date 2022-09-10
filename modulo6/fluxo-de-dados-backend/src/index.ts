@@ -67,6 +67,7 @@ app.get('/products', (req: Request, res: Response) => {
 app.put('/edit/price/:id', (req: Request, res: Response) => {
     const authorization = req.headers.authorization;
     const idItem = req.params.id
+    const { newPrice } = req.body
     let statusCode = 400
 
     try{
@@ -77,6 +78,18 @@ app.put('/edit/price/:id', (req: Request, res: Response) => {
         if(!idItem){
             statusCode = 404;
             throw new Error('Id not found or incorrect')
+        }
+        if(!newPrice){
+            statusCode = 422;
+            throw new Error('New price not found.')
+        }
+        if(typeof newPrice !== 'number' ){
+            statusCode = 422;
+            throw new Error('Incompatible types. newPrice = number')
+        }
+        if(newPrice <= 0) {
+            statusCode = 422;
+            throw new Error('Invalid product value')
         }
         let item = newProduct.find((product) => {
             return product.id === idItem
@@ -93,7 +106,7 @@ app.put('/edit/price/:id', (req: Request, res: Response) => {
             ...updateProduct,
             {
                 ...item,
-                price: 57.98
+                price: newPrice
             }
         ]
         res.status(200).send(updateProduct)
