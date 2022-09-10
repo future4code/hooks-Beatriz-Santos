@@ -29,6 +29,7 @@ app.post('/create/product', (req: Request, res: Response) => {
         }
         const id: string = Math.floor(Date.now() * Math.random()).toString(36)
         newProduct.push({id, name, price})
+
         res.status(201).send(newProduct)
     }
     catch (error: any) {
@@ -87,7 +88,36 @@ app.put('/edit/price/:id', (req: Request, res: Response) => {
                 price: 57.98
             }
         ]
-        res.send(updateProduct)
+        res.status(200).send(updateProduct)
+    }
+    catch(error: any){
+        res.status(statusCode).send(error.message)
+    }
+})
+
+app.delete('/delete/:id', (req: Request, res: Response) => {
+    const authorization = req.headers.authorization;
+    const idItem = req.params.id;
+    let statusCode = 404;
+
+    try{
+        if(!authorization){
+            statusCode = 401;
+            throw new Error('Authorization not found');
+        }
+        if(!idItem){
+            statusCode = 404;
+            throw new Error('Id not found or incorrect')
+        }
+        const deleteItem = newProduct.filter((product) => {
+            return product.id !== idItem
+        })
+        if(!deleteItem){
+            statusCode = 404;
+            throw new Error('Id not found or incorrect')
+        }
+
+        res.status(200).send(deleteItem)
     }
     catch(error: any){
         res.status(statusCode).send(error.message)
