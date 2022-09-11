@@ -4,9 +4,23 @@ GET http://localhost:3003/users
 
 
 ###
-GET http://localhost:3003/users/types?type=lokats
+GET http://localhost:3003/users/types?type=NORMAL
 
 
 
 ###
 GET http://localhost:3003/users/kskskks
+
+
+
+###
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+    "id": 21,
+    "name": "Beatriz",
+    "email": "bia@exemplo.com",
+    "type": "NORMAL",
+    "age": 21
+}

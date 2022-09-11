@@ -54,6 +54,8 @@ app.get('/users/types', (req: Request, res: Response) =>{
 })
 
 // ========== EXERCICIO 03 ==========
+// A) PARAMS FOI UTIIZADO PARA PASSAR O NOME
+
 app.get('/users/:name', (req: Request, res: Response) => {
     let statusCode = 400;
     const { name } = req.params
@@ -74,6 +76,30 @@ app.get('/users/:name', (req: Request, res: Response) => {
     }
 })
 
+// ========== EXERCICIO 04 ==========
+app.post('/user', (req: Request, res: Response) => {
+    let statusCode = 400;
+    const { id, name, email, type, age} = req.body
+    try{
+        if(!id || !name || !email || !type || !age){
+            statusCode = 422;
+            throw new Error('Propriedades sem preencher');
+        }
+        if(type.toUpperCase() !== 'NORMAL' && type.toUpperCase() !== 'ADMIN'){
+            statusCode = 422;
+            throw new Error('Type inválido, apenas NORMAL e ADMIN');
+        }
+        const newUser: User = {
+            id, name, email, type, age
+        }
+        users.push(newUser)
+
+        res.status(201).send(users)
+    }
+    catch(error: any){
+        res.status(statusCode).send(error.message)
+    }
+})
 
 app.listen(3003, () => {
     console.log('Server running in http://localhost:3003')
