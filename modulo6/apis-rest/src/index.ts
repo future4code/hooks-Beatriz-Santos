@@ -54,6 +54,25 @@ app.get('/users/types', (req: Request, res: Response) =>{
 })
 
 // ========== EXERCICIO 03 ==========
+app.get('/users/:name', (req: Request, res: Response) => {
+    let statusCode = 400;
+    const { name } = req.params
+    try{
+        const userName = users.find((user) => {
+            return user.name.toUpperCase() === name.toUpperCase();
+        })
+
+        if(!userName){
+            statusCode = 404;
+            throw new Error('User not found');
+        }
+
+        res.status(200).send(userName)
+    }
+    catch(error: any){
+        res.status(statusCode).send(error.message)
+    }
+})
 
 
 app.listen(3003, () => {

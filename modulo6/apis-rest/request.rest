@@ -5,3 +5,8 @@ GET http://localhost:3003/users
 
 ###
 GET http://localhost:3003/users/types?type=lokats
+
+
+
+###
+GET http://localhost:3003/users/kskskks
