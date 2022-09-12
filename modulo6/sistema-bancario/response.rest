@@ -1,0 +1,53 @@
+###
+GET http://localhost:3003/clients
+
+###
+GET http://localhost:3003/clients/Nathalia de Souza Santos/111.111.222-52
+
+###
+POST http://localhost:3003/clients/create
+Content-Type: application/json
+
+{
+    "name": "bianca",
+    "cpf": "856923578",
+    "dtBirth": "25632",
+    "saldo": 2.548,
+    "extrato": [{
+        "value": 2514,
+        "description": "la la la"
+    },
+    {
+        "value": 112,
+        "description": "bla bla bla"
+    }
+    ]
+}
+
+###
+POST http://localhost:3003/client/deposito/10
+Content-Type: application/json
+
+{
+    "deposito": 50
+}
+
+###
+PUT http://localhost:3003/client/pagar/10
+Content-Type: application/json
+
+{
+    "value": 100,
+    "descricao": "pagar nathhy",
+    "data": "251425"
+}
+
+###
+PUT http://localhost:3003/clients/transferir/Beatriz de Souza Santos/10
+Content-Type: application/json
+
+{
+    "nameDest": "Nathalia de Souza Santos",
+    "cpfDest": "62",
+    "value": 500
+}
