@@ -11,5 +11,3 @@ WHERE nome LIKE '%a%';
 SELECT * FROM Funcionarios
 WHERE nome NOT LIKE '%r%' 
 AND email LIKE '%u%';
-
-DELETE FROM `Funcionarios`;
