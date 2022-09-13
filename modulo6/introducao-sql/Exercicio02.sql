@@ -1,4 +1,4 @@
--- Active: 1659394409919@@35.226.146.116@3306@hooks-4313186-beatriz-santos
-USE `hooks-4313186-beatriz-santos`;
-
-SELECT * FROM `Funcionarios`;
+INSERT INTO Funcionarios(id, nome, email)
+VALUES ('001', 'Luana', 'lua@lbn.com'),
+       ('002', 'Vinicius', 'vini@lbn.com'),
+	   ('003', 'Luara', 'lau@lbn.com');
